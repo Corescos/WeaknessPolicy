@@ -1,0 +1,205 @@
+
+
+
+
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<title>Weakness Policy</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">  
+		
+		<link rel="apple-touch-icon" sizes="180x180" href="images/weaknessPolicyLogo.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="images/weaknessPolicyLogo.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="images/weaknessPolicyLogo.png">
+		<link rel="manifest" href="images/site.webmanifest">		
+  	</head>
+
+	  <?php
+	  //this is for Zane's public server. Use this as reference.
+    $servername = "localhost";
+    $username = "hackberr_pink";
+    $password = "marthaBerry!";
+    $dbname = "hackberr_pink";
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    if (!$conn) {die("Connection failed: " . mysqli_connect_error());}
+?>
+
+  	<body>
+
+		<div class="container py-3">
+  			<header>
+   				<div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+      				<a href="weaknesspolicylog.php" class="d-flex align-items-center link-body-emphasis text-decoration-none">
+       					<span class="fs-4">Welcome to the Weakness Policy Defensive Analysis Tool!</span>
+					</a>
+					<nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+					  	<a class="me-3 py-2 link-body-emphasis text-decoration-none" href="weaknesspolicy.php">Home</a>
+	  					
+      				</nav>
+
+      				
+    			</div>
+
+    			<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      				<p class="fs-5 text-body-secondary"></p>
+    			</div>
+ 		 	</header>
+
+			<main>
+
+				<p>
+					Welcome to Weakness Policy! This is a tool which helps you visually see your team's weaknesses! This tool is made to be used by Pokemon players of all skill levels, whether you're just getting into the game or you just want a refresher on your team's weaknesses doesn't matter. Weakness Policy is the tool for you! Here's how to get started:
+				</p>
+				<p>
+					#1: Using the selectors, choose a Pokemon! It's in Aphabetical order, so when you open up the selector, make sure to type the the Pokemon you want, and it will show up quickly! 
+				</p>
+			
+				<p>
+					#2: When you're ready to submit the Pokemon you want analyzed, hit the big SUBMIT button. Then, the site will tell you what each Pokemon is weak to!
+				</p>
+				<p>If you don't have 6 Pokemon to be analyzed: Don't worry! Just leave them as is and you can just ignore that specific result, as it will not be weak or resistant to anything.</p>
+
+				<div class="row row-cols-1 row-cols-md-1 mb-1 text-center">
+					<form action="weaknesspolicygrab.php" method="post" >
+					
+					<div class="col" >
+        				<div class="card mb-4 rounded-3 shadow-sm" >
+          					<div class="card-header py-3" >
+            					<h4 class="my-0 fw-normal">Choose Your Pokemon!</h4>
+          					</div>
+          					
+									
+
+								<label for="pokemon1">Choose Pokemon 1:</label>
+								<select name="pokemon1" id="pokemon1">
+									<?php
+									$query = "SELECT * FROM pokelist ORDER BY Name";
+									$result = mysqli_query($conn, $query) or die ("Could not select.");
+									while ($row = mysqli_fetch_array($result)){
+										extract($row);
+										echo "<option value=\"$Name\">$Name</option>";
+									
+
+									}	
+									?>
+								</select>
+								<br>
+							
+								<label for="pokemon2">Choose Pokemon 2:</label>
+								<select name="pokemon2" id="pokemon2">
+									<?php
+									$query = "SELECT * FROM pokelist ORDER BY Name";
+									$result = mysqli_query($conn, $query) or die ("Could not select.");
+									while ($row = mysqli_fetch_array($result)){
+										extract($row);
+										echo "<option value=\"$Name\">$Name</option>";
+									
+
+									}	
+									?>
+								</select>
+								<br>
+								<label for="pokemon3">Choose Pokemon 3:</label>
+								<select name="pokemon3" id="pokemon3">
+									<?php
+									$query = "SELECT * FROM pokelist ORDER BY Name";
+									$result = mysqli_query($conn, $query) or die ("Could not select.");
+									while ($row = mysqli_fetch_array($result)){
+										extract($row);
+										echo "<option value=\"$Name\">$Name</option>";
+									
+
+									}	
+									?>
+								</select>
+								<br>
+								<label for="pokemon4">Choose Pokemon 4:</label>
+								<select name="pokemon4" id="pokemon4">
+									<?php
+									$query = "SELECT * FROM pokelist ORDER BY Name";
+									$result = mysqli_query($conn, $query) or die ("Could not select.");
+									while ($row = mysqli_fetch_array($result)){
+										extract($row);
+										echo "<option value=\"$Name\">$Name</option>";
+									
+
+									}	
+									?>
+								</select>
+								<br>
+								<label for="pokemon5">Choose Pokemon 5:</label>
+								<select name="pokemon5" id="pokemon5">
+									<?php
+									$query = "SELECT * FROM pokelist ORDER BY Name";
+									$result = mysqli_query($conn, $query) or die ("Could not select.");
+									while ($row = mysqli_fetch_array($result)){
+										extract($row);
+										echo "<option value=\"$Name\">$Name</option>";
+									
+
+									}	
+									?>
+								</select>
+								<br>
+								<label for="pokemon6">Choose Pokemon 6:</label>
+								<select name="pokemon6" id="pokemon6">
+									<?php
+									$query = "SELECT * FROM pokelist ORDER BY Name";
+									$result = mysqli_query($conn, $query) or die ("Could not select.");
+									while ($row = mysqli_fetch_array($result)){
+										extract($row);
+										echo "<option value=\"$Name\">$Name</option>";
+									
+
+									}	
+									?>
+								</select>
+								<br><br>
+								
+								
+
+
+
+        				</div>
+      				</div>
+
+
+					  
+
+
+					 
+
+
+					
+
+
+					
+
+
+					 
+					</div>
+					<button class="btn btn-primary w-100 py-2" type="submit">Submit</button>
+					</form>
+					
+				</div>
+
+				
+				
+
+			</main>
+
+
+			<!-- <footer class="pt-4 my-md-5 pt-md-5 border-top">
+    			<div class="row">
+      				<div class="col-12 col-md">
+        				<small class="d-block mb-3 text-body-secondary">Created by Matthew Marshall</small>
+      				</div>
+				</div>
+			</footer> -->
+ 
+		</div>
+		<script src="js/bootstrap.bundle.min.js"></script>
+	</body>
+</html>
