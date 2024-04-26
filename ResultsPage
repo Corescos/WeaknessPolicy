@@ -1,0 +1,1969 @@
+<!doctype html>
+
+<html>
+
+    <head>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<title>Weakness Policy</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">  
+		
+		<link rel="apple-touch-icon" sizes="180x180" href="images/weaknessPolicyLogo.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="images/weaknessPolicyLogo.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="images/weaknessPolicyLogo.png">
+		<link rel="manifest" href="images/site.webmanifest">		
+  	</head>
+        <div class="container py-3">
+            <header>
+   				<div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+				   <a href="weaknesspolicy.php" class="d-flex align-items-center link-body-emphasis text-decoration-none">
+       					<span class="fs-4">Weakness Policy</span>
+					</a>
+
+      				<nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+					  	<a class="me-3 py-2 link-body-emphasis text-decoration-none" href="weaknesspolicy.php">Home</a>
+	  					<a class="me-3 py-2 link-body-emphasis text-decoration-none" href="weaknesspolicylog.php">Back to Type Selectors</a>
+                        
+      				</nav>
+    			</div>
+            </header>        
+        </div>
+
+
+
+
+
+    </html>
+
+
+
+
+
+<?php
+//here's what needs to happen? Make it so that log.php goes here, then from here to the actual log. it should work with a few adjustments.
+// Extract the form data with POST
+
+
+//how to select a pokemon from a list:
+//First selector selects the Pokemon name from the database
+//take that resulting id number and put it in a second selector
+//that second selector looks for the types where the id = the id of the pokemon you chose
+
+// Connect to the database
+
+$servername = "localhost";
+$username = "hackberr_pink";
+$password = "marthaBerry!";
+$dbname = "hackberr_pink";
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+    if (!$conn) {die("Connection failed: " . mysqli_connect_error());}
+
+
+
+
+
+
+
+
+
+$poke1=$_POST['pokemon1'];
+$query = "SELECT * FROM pokelist WHERE Name = '$poke1'";
+$result = mysqli_query($conn, $query) or die ("Could not select.");
+while ($row = mysqli_fetch_array($result)){
+    extract($row);
+}	
+$type1 = $Type1;
+$type2 = $Type2;
+
+//number 1
+
+$poke2=$_POST['pokemon2'];
+$query = "SELECT * FROM pokelist WHERE Name = '$poke2'";
+$result = mysqli_query($conn, $query) or die ("Could not select.");
+while ($row = mysqli_fetch_array($result)){
+    extract($row);
+}	
+$type3 = $Type1;
+$type4 = $Type2;
+
+//number 2
+
+$poke3=$_POST['pokemon3'];
+$query = "SELECT * FROM pokelist WHERE Name = '$poke3'";
+$result = mysqli_query($conn, $query) or die ("Could not select.");
+while ($row = mysqli_fetch_array($result)){
+    extract($row);
+}	
+$type5 = $Type1;
+$type6 = $Type2;
+
+//number 3
+
+$poke4=$_POST['pokemon4'];
+$query = "SELECT * FROM pokelist WHERE Name = '$poke4'";
+$result = mysqli_query($conn, $query) or die ("Could not select.");
+while ($row = mysqli_fetch_array($result)){
+    extract($row);
+}	
+
+$type7 = $Type1;
+$type8 = $Type2;
+
+//number 4
+
+$poke5=$_POST['pokemon5'];
+$query = "SELECT * FROM pokelist WHERE Name = '$poke5'";
+$result = mysqli_query($conn, $query) or die ("Could not select.");
+while ($row = mysqli_fetch_array($result)){
+    extract($row);
+}	
+
+$type9 = $Type1;
+$type10 = $Type2;
+
+//number 5
+
+$poke6=$_POST['pokemon6'];
+$query = "SELECT * FROM pokelist WHERE Name = '$poke6'";
+$result = mysqli_query($conn, $query) or die ("Could not select.");
+while ($row = mysqli_fetch_array($result)){
+    extract($row);
+}	
+
+$type11 = $Type1;
+$type12 = $Type2;
+
+
+
+
+
+
+
+// If not, insert into database and redirect them to the login page
+    // $query = "INSERT INTO matthew2Log (userID, moneySpent, moneyType, item, date, time, notes) VALUES ('$userID', '$amount', '$type', '$item', '$date', '$logTime', '$notes')";
+    // $result = mysqli_query($conn, $query) or die ("Could not grab.");
+    // header("Location: weaknesspolicy.php");
+
+    //first type variables
+        $Normal1=0;
+        $Fire1=0;
+        $Water1=0;
+        $Grass1=0;
+        $Electric1=0;
+        $Ice1=0; 
+        $Fighting1=0;
+        $Poison1=0;
+        $Ground1=0;
+        $Flying1=0;
+        $Psychic1=0;
+        $Bug1=0;
+        $Rock1=0;
+        $Ghost1=0;
+        $Dragon1=0;
+        $Dark1=0;
+        $Steel1=0;
+        $Fairy1=0;
+        $Typeless1=0;
+    //second type variables
+        $Normal2=0;
+        $Fire2=0;
+        $Water2=0;
+        $Grass2=0;
+        $Electric2=0;
+        $Ice2=0; 
+        $Fighting2=0;
+        $Poison2=0;
+        $Ground2=0;
+        $Flying2=0;
+        $Psychic2=0;
+        $Bug2=0;
+        $Rock2=0;
+        $Ghost2=0;
+        $Dragon2=0;
+        $Dark2=0;
+        $Steel2=0;
+        $Fairy2=0;
+        $Typeless2=0;  
+    //third type variables
+        $Normal3=0;
+        $Fire3=0;
+        $Water3=0;
+        $Grass3=0;
+        $Electric3=0;
+        $Ice3=0; 
+        $Fighting3=0;
+        $Poison3=0;
+        $Ground3=0;
+        $Flying3=0;
+        $Psychic3=0;
+        $Bug3=0;
+        $Rock3=0;
+        $Ghost3=0;
+        $Dragon3=0;
+        $Dark3=0;
+        $Steel3=0;
+        $Fairy3=0;
+        $Typeless3=0;
+    //fourth type variables
+        $Normal4=0;
+        $Fire4=0;
+        $Water4=0;
+        $Grass4=0;
+        $Electric4=0;
+        $Ice4=0; 
+        $Fighting4=0;
+        $Poison4=0;
+        $Ground4=0;
+        $Flying4=0;
+        $Psychic4=0;
+        $Bug4=0;
+        $Rock4=0;
+        $Ghost4=0;
+        $Dragon4=0;
+        $Dark4=0;
+        $Steel4=0;
+        $Fairy4=0;
+        $Typeless4=0;
+    //fifth type grabber
+        $Normal5=0;
+        $Fire5=0;
+        $Water5=0;
+        $Grass5=0;
+        $Electric5=0;
+        $Ice5=0; 
+        $Fighting5=0;
+        $Poison5=0;
+        $Ground5=0;
+        $Flying5=0;
+        $Psychic5=0;
+        $Bug5=0;
+        $Rock5=0;
+        $Ghost5=0;
+        $Dragon5=0;
+        $Dark5=0;
+        $Steel5=0;
+        $Fairy5=0;
+        $Typeless5=0;
+    //sixth type grabber
+        $Normal6=0;
+        $Fire6=0;
+        $Water6=0;
+        $Grass6=0;
+        $Electric6=0;
+        $Ice6=0; 
+        $Fighting6=0;
+        $Poison6=0;
+        $Ground6=0;
+        $Flying6=0;
+        $Psychic6=0;
+        $Bug6=0;
+        $Rock6=0;
+        $Ghost6=0;
+        $Dragon6=0;
+        $Dark6=0;
+        $Steel6=0;
+        $Fairy6=0;
+        $Typeless6=0;
+    //seventh type grabber
+        $Normal7=0;
+        $Fire7=0;
+        $Water7=0;
+        $Grass7=0;
+        $Electric7=0;
+        $Ice7=0; 
+        $Fighting7=0;
+        $Poison7=0;
+        $Ground7=0;
+        $Flying7=0;
+        $Psychic7=0;
+        $Bug7=0;
+        $Rock7=0;
+        $Ghost7=0;
+        $Dragon7=0;
+        $Dark7=0;
+        $Steel7=0;
+        $Fairy7=0;
+        $Typeless7=0;
+    //eighth type grabber
+        $Normal8=0;
+        $Fire8=0;
+        $Water8=0;
+        $Grass8=0;
+        $Electric8=0;
+        $Ice8=0; 
+        $Fighting8=0;
+        $Poison8=0;
+        $Ground8=0;
+        $Flying8=0;
+        $Psychic8=0;
+        $Bug8=0;
+        $Rock8=0;
+        $Ghost8=0;
+        $Dragon8=0;
+        $Dark8=0;
+        $Steel8=0;
+        $Fairy8=0;
+        $Typeless8=0;
+    //nineth type grabber
+        $Normal9=0;
+        $Fire9=0;
+        $Water9=0;
+        $Grass9=0;
+        $Electric9=0;
+        $Ice9=0; 
+        $Fighting9=0;
+        $Poison9=0;
+        $Ground9=0;
+        $Flying9=0;
+        $Psychic9=0;
+        $Bug9=0;
+        $Rock9=0;
+        $Ghost9=0;
+        $Dragon9=0;
+        $Dark9=0;
+        $Steel9=0;
+        $Fairy9=0;
+        $Typeless9=0;
+    //tenth type grabber
+        $Normal10=0;
+        $Fire10=0;
+        $Water10=0;
+        $Grass10=0;
+        $Electric10=0;
+        $Ice10=0; 
+        $Fighting10=0;
+        $Poison10=0;
+        $Ground10=0;
+        $Flying10=0;
+        $Psychic10=0;
+        $Bug10=0;
+        $Rock10=0;
+        $Ghost10=0;
+        $Dragon10=0;
+        $Dark10=0;
+        $Steel10=0;
+        $Fairy10=0;
+        $Typeless10=0;
+    //eleventh type grabber
+        $Normal11=0;
+        $Fire11=0;
+        $Water11=0;
+        $Grass11=0;
+        $Electric11=0;
+        $Ice11=0; 
+        $Fighting11=0;
+        $Poison11=0;
+        $Ground11=0;
+        $Flying11=0;
+        $Psychic11=0;
+        $Bug11=0;
+        $Rock11=0;
+        $Ghost11=0;
+        $Dragon11=0;
+        $Dark11=0;
+        $Steel11=0;
+        $Fairy11=0;
+        $Typeless11=0;
+    //twelth type grabber
+        $Normal12=0;
+        $Fire12=0;
+        $Water12=0;
+        $Grass12=0;
+        $Electric12=0;
+        $Ice12=0; 
+        $Fighting12=0;
+        $Poison12=0;
+        $Ground12=0;
+        $Flying12=0;
+        $Psychic12=0;
+        $Bug12=0;
+        $Rock12=0;
+        $Ghost12=0;
+        $Dragon12=0;
+        $Dark12=0;
+        $Steel12=0;
+        $Fairy12=0;
+        $Typeless12=0;
+   
+        //type 1 grabber
+    $query = "SELECT * FROM matthewpoke WHERE Type = '$type1' "; 
+    $result = mysqli_query($conn, $query) or die ("Could not grab.");
+    while ($row = mysqli_fetch_array($result)){
+        extract($row);
+        $Normal1=$Normal;
+        $Fire1=$Fire;
+        $Water1=$Water;
+        $Grass1=$Grass;
+        $Electric1=$Electric;
+        $Ice1=$Ice; 
+        $Fighting1=$Fighting;
+        $Poison1=$Poison;
+        $Ground1=$Ground;
+        $Flying1=$Flying;
+        $Psychic1=$Psychic;
+        $Bug1=$Bug;
+        $Rock1=$Rock;
+        $Ghost1=$Ghost;
+        $Dragon1=$Dragon;
+        $Dark1=$Dark;
+        $Steel1=$Steel;
+        $Fairy1=$Fairy;
+        $Typeless1=$Typeless;
+       
+
+    }
+    //type 2 grabber
+    $query = "SELECT * FROM matthewpoke WHERE Type = '$type2' "; 
+    $result = mysqli_query($conn, $query) or die ("Could not grab.");
+    while ($row = mysqli_fetch_array($result)){
+        extract($row);
+        $Normal2=$Normal;
+        $Fire2=$Fire;
+        $Water2=$Water;
+        $Grass2=$Grass;
+        $Electric2=$Electric;
+        $Ice2=$Ice; 
+        $Fighting2=$Fighting;
+        $Poison2=$Poison;
+        $Ground2=$Ground;
+        $Flying2=$Flying;
+        $Psychic2=$Psychic;
+        $Bug2=$Bug;
+        $Rock2=$Rock;
+        $Ghost2=$Ghost;
+        $Dragon2=$Dragon;
+        $Dark2=$Dark;
+        $Steel2=$Steel;
+        $Fairy2=$Fairy;
+        $Typeless2=$Typeless;
+
+    }
+    //type 3 grabber
+    $query = "SELECT * FROM matthewpoke WHERE Type = '$type3' "; 
+    $result = mysqli_query($conn, $query) or die ("Could not grab.");
+    while ($row = mysqli_fetch_array($result)){
+        extract($row);
+        $Normal3=$Normal;
+        $Fire3=$Fire;
+        $Water3=$Water;
+        $Grass3=$Grass;
+        $Electric3=$Electric;
+        $Ice3=$Ice; 
+        $Fighting3=$Fighting;
+        $Poison3=$Poison;
+        $Ground3=$Ground;
+        $Flying3=$Flying;
+        $Psychic3=$Psychic;
+        $Bug3=$Bug;
+        $Rock3=$Rock;
+        $Ghost3=$Ghost;
+        $Dragon3=$Dragon;
+        $Dark3=$Dark;
+        $Steel3=$Steel;
+        $Fairy3=$Fairy;
+        $Typeless3=$Typeless;
+
+    }
+    //type 4 grabber
+    $query = "SELECT * FROM matthewpoke WHERE Type = '$type4' "; 
+    $result = mysqli_query($conn, $query) or die ("Could not grab.");
+    while ($row = mysqli_fetch_array($result)){
+        extract($row);
+        $Normal4=$Normal;
+        $Fire4=$Fire;
+        $Water4=$Water;
+        $Grass4=$Grass;
+        $Electric4=$Electric;
+        $Ice4=$Ice; 
+        $Fighting4=$Fighting;
+        $Poison4=$Poison;
+        $Ground4=$Ground;
+        $Flying4=$Flying;
+        $Psychic4=$Psychic;
+        $Bug4=$Bug;
+        $Rock4=$Rock;
+        $Ghost4=$Ghost;
+        $Dragon4=$Dragon;
+        $Dark4=$Dark;
+        $Steel4=$Steel;
+        $Fairy4=$Fairy;
+        $Typeless4=$Typeless;
+        
+
+    }
+    //type 5 grabber
+    $query = "SELECT * FROM matthewpoke WHERE Type = '$type5' "; 
+    $result = mysqli_query($conn, $query) or die ("Could not grab.");
+    while ($row = mysqli_fetch_array($result)){
+        extract($row);
+        $Normal5=$Normal;
+        $Fire5=$Fire;
+        $Water5=$Water;
+        $Grass5=$Grass;
+        $Electric5=$Electric;
+        $Ice5=$Ice; 
+        $Fighting5=$Fighting;
+        $Poison5=$Poison;
+        $Ground5=$Ground;
+        $Flying5=$Flying;
+        $Psychic5=$Psychic;
+        $Bug5=$Bug;
+        $Rock5=$Rock;
+        $Ghost5=$Ghost;
+        $Dragon5=$Dragon;
+        $Dark5=$Dark;
+        $Steel5=$Steel;
+        $Fairy5=$Fairy;
+        $Typeless5=$Typeless;
+        
+
+
+    }
+    //type 6 grabber
+    $query = "SELECT * FROM matthewpoke WHERE Type = '$type6' "; 
+    $result = mysqli_query($conn, $query) or die ("Could not grab.");
+    while ($row = mysqli_fetch_array($result)){
+        extract($row);
+        $Normal6=$Normal;
+        $Fire6=$Fire;
+        $Water6=$Water;
+        $Grass6=$Grass;
+        $Electric6=$Electric;
+        $Ice6=$Ice; 
+        $Fighting6=$Fighting;
+        $Poison6=$Poison;
+        $Ground6=$Ground;
+        $Flying6=$Flying;
+        $Psychic6=$Psychic;
+        $Bug6=$Bug;
+        $Rock6=$Rock;
+        $Ghost6=$Ghost;
+        $Dragon6=$Dragon;
+        $Dark6=$Dark;
+        $Steel6=$Steel;
+        $Fairy6=$Fairy;
+        $Typeless6=$Typeless;
+       
+
+
+    }
+    //type 7 grabber
+    $query = "SELECT * FROM matthewpoke WHERE Type = '$type7' "; 
+    $result = mysqli_query($conn, $query) or die ("Could not grab.");
+    while ($row = mysqli_fetch_array($result)){
+        extract($row);
+        $Normal7=$Normal;
+        $Fire7=$Fire;
+        $Water7=$Water;
+        $Grass7=$Grass;
+        $Electric7=$Electric;
+        $Ice7=$Ice; 
+        $Fighting7=$Fighting;
+        $Poison7=$Poison;
+        $Ground7=$Ground;
+        $Flying7=$Flying;
+        $Psychic7=$Psychic;
+        $Bug7=$Bug;
+        $Rock7=$Rock;
+        $Ghost7=$Ghost;
+        $Dragon7=$Dragon;
+        $Dark7=$Dark;
+        $Steel7=$Steel;
+        $Fairy7=$Fairy;
+        $Typeless7=$Typeless;
+       
+
+
+    }
+    //type 8 grabber
+    $query = "SELECT * FROM matthewpoke WHERE Type = '$type8' "; 
+    $result = mysqli_query($conn, $query) or die ("Could not grab.");
+    while ($row = mysqli_fetch_array($result)){
+        extract($row);
+        $Normal8=$Normal;
+        $Fire8=$Fire;
+        $Water8=$Water;
+        $Grass8=$Grass;
+        $Electric8=$Electric;
+        $Ice8=$Ice; 
+        $Fighting8=$Fighting;
+        $Poison8=$Poison;
+        $Ground8=$Ground;
+        $Flying8=$Flying;
+        $Psychic8=$Psychic;
+        $Bug8=$Bug;
+        $Rock8=$Rock;
+        $Ghost8=$Ghost;
+        $Dragon8=$Dragon;
+        $Dark8=$Dark;
+        $Steel8=$Steel;
+        $Fairy8=$Fairy;
+        $Typeless8=$Typeless;
+      
+
+
+    }
+    //type 9 grabber
+    $query = "SELECT * FROM matthewpoke WHERE Type = '$type9' "; 
+    $result = mysqli_query($conn, $query) or die ("Could not grab.");
+    while ($row = mysqli_fetch_array($result)){
+        extract($row);
+        $Normal9=$Normal;
+        $Fire9=$Fire;
+        $Water9=$Water;
+        $Grass9=$Grass;
+        $Electric9=$Electric;
+        $Ice9=$Ice; 
+        $Fighting9=$Fighting;
+        $Poison9=$Poison;
+        $Ground9=$Ground;
+        $Flying9=$Flying;
+        $Psychic9=$Psychic;
+        $Bug9=$Bug;
+        $Rock9=$Rock;
+        $Ghost9=$Ghost;
+        $Dragon9=$Dragon;
+        $Dark9=$Dark;
+        $Steel9=$Steel;
+        $Fairy9=$Fairy;
+        $Typeless9=$Typeless;
+       
+
+
+    }
+    //type 10 grabber
+    $query = "SELECT * FROM matthewpoke WHERE Type = '$type10' "; 
+    $result = mysqli_query($conn, $query) or die ("Could not grab.");
+    while ($row = mysqli_fetch_array($result)){
+        extract($row);
+        $Normal10=$Normal;
+        $Fire10=$Fire;
+        $Water10=$Water;
+        $Grass10=$Grass;
+        $Electric10=$Electric;
+        $Ice10=$Ice; 
+        $Fighting10=$Fighting;
+        $Poison10=$Poison;
+        $Ground10=$Ground;
+        $Flying10=$Flying;
+        $Psychic10=$Psychic;
+        $Bug10=$Bug;
+        $Rock10=$Rock;
+        $Ghost10=$Ghost;
+        $Dragon10=$Dragon;
+        $Dark10=$Dark;
+        $Steel10=$Steel;
+        $Fairy10=$Fairy;
+        $Typeless10=$Typeless;
+      
+
+
+    }
+    //type 11 grabber
+    $query = "SELECT * FROM matthewpoke WHERE Type = '$type11' "; 
+    $result = mysqli_query($conn, $query) or die ("Could not grab.");
+    while ($row = mysqli_fetch_array($result)){
+        extract($row);
+        $Normal11=$Normal;
+        $Fire11=$Fire;
+        $Water11=$Water;
+        $Grass11=$Grass;
+        $Electric11=$Electric;
+        $Ice11=$Ice; 
+        $Fighting11=$Fighting;
+        $Poison11=$Poison;
+        $Ground11=$Ground;
+        $Flying11=$Flying;
+        $Psychic11=$Psychic;
+        $Bug11=$Bug;
+        $Rock11=$Rock;
+        $Ghost11=$Ghost;
+        $Dragon11=$Dragon;
+        $Dark11=$Dark;
+        $Steel11=$Steel;
+        $Fairy11=$Fairy;
+        $Typeless11=$Typeless;
+        
+
+
+    }
+    //type 12 grabber
+    $query = "SELECT * FROM matthewpoke WHERE Type = '$type12' "; 
+    $result = mysqli_query($conn, $query) or die ("Could not grab.");
+    while ($row = mysqli_fetch_array($result)){
+        extract($row);
+        $Normal12=$Normal;
+        $Fire12=$Fire;
+        $Water12=$Water;
+        $Grass12=$Grass;
+        $Electric12=$Electric;
+        $Ice12=$Ice; 
+        $Fighting12=$Fighting;
+        $Poison12=$Poison;
+        $Ground12=$Ground;
+        $Flying12=$Flying;
+        $Psychic12=$Psychic;
+        $Bug12=$Bug;
+        $Rock12=$Rock;
+        $Ghost12=$Ghost;
+        $Dragon12=$Dragon;
+        $Dark12=$Dark;
+        $Steel12=$Steel;
+        $Fairy12=$Fairy;
+        $Typeless12=$Typeless;
+       
+
+
+    }
+    //First Pokemon result variables
+        $Normal1r=$Normal1 * $Normal2;
+        $Fire1r=$Fire1 * $Fire2;
+        $Water1r=$Water1 * $Water2;
+        $Grass1r=$Grass1 *$Grass2;
+        $Electric1r=$Electric1 * $Electric2;
+        $Ice1r=$Ice1 * $Ice2; 
+        $Fighting1r=$Fighting1 * $Fighting2;
+        $Poison1r=$Poison1 * $Poison2;
+        $Ground1r=$Ground1 * $Ground2;
+        $Flying1r=$Flying1 * $Flying2;
+        $Psychic1r=$Psychic1 * $Psychic2;
+        $Bug1r=$Bug1 * $Bug2;
+        $Rock1r=$Rock1 * $Rock2;
+        $Ghost1r=$Ghost1 * $Ghost2;
+        $Dragon1r=$Dragon1 * $Dragon2;
+        $Dark1r=$Dark1 * $Dark2;
+        $Steel1r=$Steel1 * $Steel2;
+        $Fairy1r=$Fairy1 * $Fairy2;
+        $Typeless1r=$Typeless1 * $Typeless2;
+    //Second Pokemon result variables
+        $Normal2r=$Normal3 * $Normal4;
+        $Fire2r=$Fire3 * $Fire4;
+        $Water2r=$Water3 * $Water4;
+        $Grass2r=$Grass3 *$Grass4;
+        $Electric2r=$Electric3 * $Electric4;
+        $Ice2r=$Ice3 * $Ice4; 
+        $Fighting2r=$Fighting3 * $Fighting4;
+        $Poison2r=$Poison3 * $Poison4;
+        $Ground2r=$Ground3 * $Ground4;
+        $Flying2r=$Flying3 * $Flying4;
+        $Psychic2r=$Psychic3 * $Psychic4;
+        $Bug2r=$Bug3 * $Bug4;
+        $Rock2r=$Rock3 * $Rock4;
+        $Ghost2r=$Ghost3 * $Ghost4;
+        $Dragon2r=$Dragon3 * $Dragon4;
+        $Dark2r=$Dark3 * $Dark4;
+        $Steel2r=$Steel3 * $Steel4;
+        $Fairy2r=$Fairy3 * $Fairy4;
+        $Typeless2r=$Typeless3 * $Typeless4;
+    //Third Pokemon result variables
+        $Normal3r=$Normal5 * $Normal6;
+        $Fire3r=$Fire5 * $Fire6;
+        $Water3r=$Water5 * $Water6;
+        $Grass3r=$Grass5 *$Grass6;
+        $Electric3r=$Electric5 * $Electric6;
+        $Ice3r=$Ice5 * $Ice6; 
+        $Fighting3r=$Fighting5 * $Fighting6;
+        $Poison3r=$Poison5 * $Poison6;
+        $Ground3r=$Ground5 * $Ground6;
+        $Flying3r=$Flying5 * $Flying6;
+        $Psychic3r=$Psychic5 * $Psychic6;
+        $Bug3r=$Bug5 * $Bug6;
+        $Rock3r=$Rock5 * $Rock6;
+        $Ghost3r=$Ghost5 * $Ghost6;
+        $Dragon3r=$Dragon5 * $Dragon6;
+        $Dark3r=$Dark5 * $Dark6;
+        $Steel3r=$Steel5 * $Steel6;
+        $Fairy3r=$Fairy5 * $Fairy6;
+        $Typeless3r=$Typeless5 * $Typeless6;
+    //Fourth Pokemon result variables
+        $Normal4r=$Normal7 * $Normal8;
+        $Fire4r=$Fire7 * $Fire8;
+        $Water4r=$Water7 * $Water8;
+        $Grass4r=$Grass7 *$Grass8;
+        $Electric4r=$Electric7 * $Electric8;
+        $Ice4r=$Ice7 * $Ice8; 
+        $Fighting4r=$Fighting7 * $Fighting8;
+        $Poison4r=$Poison7 * $Poison8;
+        $Ground4r=$Ground7 * $Ground8;
+        $Flying4r=$Flying7 * $Flying8;
+        $Psychic4r=$Psychic7 * $Psychic8;
+        $Bug4r=$Bug7 * $Bug8;
+        $Rock4r=$Rock7 * $Rock8;
+        $Ghost4r=$Ghost7 * $Ghost8;
+        $Dragon4r=$Dragon7 * $Dragon8;
+        $Dark4r=$Dark7 * $Dark8;
+        $Steel4r=$Steel7 * $Steel8;
+        $Fairy4r=$Fairy7 * $Fairy8;
+        $Typeless4r=$Typeless7 * $Typeless8;
+    //Fifth Pokemon results variables
+        $Normal5r=$Normal9 * $Normal10;
+        $Fire5r=$Fire9 * $Fire10;
+        $Water5r=$Water9 * $Water10;
+        $Grass5r=$Grass9 *$Grass10;
+        $Electric5r=$Electric9 * $Electric10;
+        $Ice5r=$Ice9 * $Ice10; 
+        $Fighting5r=$Fighting9 * $Fighting10;
+        $Poison5r=$Poison9 * $Poison10;
+        $Ground5r=$Ground9 * $Ground10;
+        $Flying5r=$Flying9 * $Flying10;
+        $Psychic5r=$Psychic9 * $Psychic10;
+        $Bug5r=$Bug9 * $Bug10;
+        $Rock5r=$Rock9 * $Rock10;
+        $Ghost5r=$Ghost9 * $Ghost10;
+        $Dragon5r=$Dragon9 * $Dragon10;
+        $Dark5r=$Dark9 * $Dark10;
+        $Steel5r=$Steel9 * $Steel10;
+        $Fairy5r=$Fairy9 * $Fairy10;
+        $Typeless5r=$Typeless9 * $Typeless10;
+    //Sixth Pokemon result variables
+        $Normal6r=$Normal11 * $Normal12;
+        $Fire6r=$Fire11 * $Fire12;
+        $Water6r=$Water11 * $Water12;
+        $Grass6r=$Grass11 *$Grass12;
+        $Electric6r=$Electric11 * $Electric12;
+        $Ice6r=$Ice11 * $Ice12; 
+        $Fighting6r=$Fighting11 * $Fighting12;
+        $Poison6r=$Poison11 * $Poison12;
+        $Ground6r=$Ground11 * $Ground12;
+        $Flying6r=$Flying11 * $Flying12;
+        $Psychic6r=$Psychic11 * $Psychic12;
+        $Bug6r=$Bug11 * $Bug12;
+        $Rock6r=$Rock11 * $Rock12;
+        $Ghost6r=$Ghost11 * $Ghost12;
+        $Dragon6r=$Dragon11 * $Dragon12;
+        $Dark6r=$Dark11 * $Dark12;
+        $Steel6r=$Steel11 * $Steel12;
+        $Fairy6r=$Fairy11 * $Fairy12;
+        $Typeless6r=$Typeless11 * $Typeless12;
+
+        // echo "$Normal1r<br>";
+        // echo "$Fire1r<br>";
+        // echo "$Water1r<br>";
+        // echo "$Grass1r<br>";
+        // echo "$Electric1r<br>";
+        // echo "$Ice1r<br>";
+        // echo "$Fighting1r<br>";
+        // echo "$Poison1r<br>";
+        // echo "$Ground1r<br>";
+        // echo "$Flying1r<br>";
+        // echo "$Psychic1r<br>";
+        // echo "$Bug1r<br>";
+        // echo "$Rock1r<br>";
+        // echo "$Ghost1r<br>";
+        // echo "$Dragon1r<br>";
+        // echo "$Dark1r<br>";
+        // echo "$Steel1r<br>";
+        // echo "$Fairy1r<br>";
+        // echo "$Typeless1r<br>";
+
+
+        $normalweak=0;
+        $fireweak=0;
+        $waterweak=0;
+        $grassweak=0;
+        $electricweak=0;
+        $iceweak=0;
+        $fightingweak=0;
+        $poisonweak=0;
+        $groundweak=0;
+        $flyingweak=0;
+        $psychicweak=0;
+        $bugweak=0;
+        $rockweak=0;
+        $ghostweak=0;
+        $dragonweak=0;
+        $darkweak=0;
+        $steelweak=0;
+        $fairyweak=0;
+        $typelessweak=0;
+
+?>
+
+
+<html>
+<!-- Make team weakness active on the top part -->
+
+                            <?php
+                            //idea for updating a value to create a weakness tracker: When a type has a weakness, update a relevant value, such as if a pokemon is weak to water (2x or 4x), update waterWeak by 1. Then, at the end, check all typeWeak numbers and echo team weaknesses if their value is 3 or greater.
+                                if($Normal1r == 4){$normalweak++;}
+                                if($Fire1r == 4){$fireweak++;}
+                                if($Water1r == 4){$waterweak++;}
+                                if($Grass1r == 4){$grassweak++;}
+                                if($Electric1r == 4){$electricweak++;}
+                                if($Ice1r == 4){$iceweak++;}
+                                if($Fighting1r == 4){$fightingweak++;}
+                                if($Poison1r == 4){$poisonweak++;}
+                                if($Ground1r == 4){$groundweak++;}
+                                if($Flying1r == 4){$flyingweak++;}
+                                if($Psychic1r == 4){$psychicweak++;}
+                                if($Bug1r == 4){$bugweak++;}
+                                if($Rock1r == 4){$rockweak++;}
+                                if($Ghost1r == 4){$ghostweak++;}
+                                if($Dragon1r == 4){$dragonweak++;}
+                                if($Dark1r == 4){$darkweak++;}
+                                if($Steel1r == 4){$steelweak++;}
+                                if($Fairy1r == 4){$fairyweak++;}
+                                if($Typeless1r == 4){$typelessweak++;}
+                            ?>
+							
+							<?php
+                                if($Normal1r == 2){$normalweak++;}
+                                if($Fire1r == 2){$fireweak++;}
+                                if($Water1r == 2){$waterweak++;}
+                                if($Grass1r == 2){$grassweak++;}
+                                if($Electric1r == 2){$electricweak++;}
+                                if($Ice1r == 2){$iceweak++;}
+                                if($Fighting1r == 2){$fightingweak++;}
+                                if($Poison1r == 2){$poisonweak++;}
+                                if($Ground1r == 2){$groundweak++;}
+                                if($Flying1r == 2){$flyingweak++;}
+                                if($Psychic1r == 2){$psychicweak++;}
+                                if($Bug1r == 2){$bugweak++;}
+                                if($Rock1r == 2){$rockweak++;}
+                                if($Ghost1r == 2){$ghostweak++;}
+                                if($Dragon1r == 2){$dragonweak++;}
+                                if($Dark1r == 2){$darkweak++;}
+                                if($Steel1r == 2){$steelweak++;}
+                                if($Fairy1r == 2){$fairyweak++;}
+                                if($Typeless1r == 2){$typelessweak++;}
+                                ?>
+
+
+<?php
+                            //idea for updating a value to create a weakness tracker: When a type has a weakness, update a relevant value, such as if a pokemon is weak to water (2x or 4x), update waterWeak by 1. Then, at the end, check all typeWeak numbers and echo team weaknesses if their value is 3 or greater.
+                                if($Normal2r == 4){$normalweak++;}
+                                if($Fire2r == 4){$fireweak++;}
+                                if($Water2r == 4){$waterweak++;}
+                                if($Grass2r == 4){$grassweak++;}
+                                if($Electric2r == 4){$electricweak++;}
+                                if($Ice2r == 4){$iceweak++;}
+                                if($Fighting2r == 4){$fightingweak++;}
+                                if($Poison2r == 4){$poisonweak++;}
+                                if($Ground2r == 4){$groundweak++;}
+                                if($Flying2r == 4){$flyingweak++;}
+                                if($Psychic2r == 4){$psychicweak++;}
+                                if($Bug2r == 4){$bugweak++;}
+                                if($Rock2r == 4){$rockweak++;}
+                                if($Ghost2r == 4){$ghostweak++;}
+                                if($Dragon2r == 4){$dragonweak++;}
+                                if($Dark2r == 4){$darkweak++;}
+                                if($Steel2r == 4){$steelweak++;}
+                                if($Fairy2r == 4){$fairyweak++;}
+                                if($Typeless2r == 4){$typelessweak++;}
+                            ?>
+							
+							<?php
+                                if($Normal2r == 2){$normalweak++;}
+                                if($Fire2r == 2){$fireweak++;}
+                                if($Water2r == 2){$waterweak++;}
+                                if($Grass2r == 2){$grassweak++;}
+                                if($Electric2r == 2){$electricweak++;}
+                                if($Ice2r == 2){$iceweak++;}
+                                if($Fighting2r == 2){$fightingweak++;}
+                                if($Poison2r == 2){$poisonweak++;}
+                                if($Ground2r == 2){$groundweak++;}
+                                if($Flying2r == 2){$flyingweak++;}
+                                if($Psychic2r == 2){$psychicweak++;}
+                                if($Bug2r == 2){$bugweak++;}
+                                if($Rock2r == 2){$rockweak++;}
+                                if($Ghost2r == 2){$ghostweak++;}
+                                if($Dragon2r == 2){$dragonweak++;}
+                                if($Dark2r == 2){$darkweak++;}
+                                if($Steel2r == 2){$steelweak++;}
+                                if($Fairy2r == 2){$fairyweak++;}
+                                if($Typeless2r == 2){$typelessweak++;}
+                                ?>
+
+<?php
+                            //idea for updating a value to create a weakness tracker: When a type has a weakness, update a relevant value, such as if a pokemon is weak to water (2x or 4x), update waterWeak by 1. Then, at the end, check all typeWeak numbers and echo team weaknesses if their value is 3 or greater.
+                                if($Normal3r == 4){$normalweak++;}
+                                if($Fire3r == 4){$fireweak++;}
+                                if($Water3r == 4){$waterweak++;}
+                                if($Grass3r == 4){$grassweak++;}
+                                if($Electric3r == 4){$electricweak++;}
+                                if($Ice3r == 4){$iceweak++;}
+                                if($Fighting3r == 4){$fightingweak++;}
+                                if($Poison3r == 4){$poisonweak++;}
+                                if($Ground3r == 4){$groundweak++;}
+                                if($Flying3r == 4){$flyingweak++;}
+                                if($Psychic3r == 4){$psychicweak++;}
+                                if($Bug3r == 4){$bugweak++;}
+                                if($Rock3r == 4){$rockweak++;}
+                                if($Ghost3r == 4){$ghostweak++;}
+                                if($Dragon3r == 4){$dragonweak++;}
+                                if($Dark3r == 4){$darkweak++;}
+                                if($Steel3r == 4){$steelweak++;}
+                                if($Fairy3r == 4){$fairyweak++;}
+                                if($Typeless3r == 4){$typelessweak++;}
+                            ?>
+							
+							<?php
+                                if($Normal3r == 2){$normalweak++;}
+                                if($Fire3r == 2){$fireweak++;}
+                                if($Water3r == 2){$waterweak++;}
+                                if($Grass3r == 2){$grassweak++;}
+                                if($Electric3r == 2){$electricweak++;}
+                                if($Ice3r == 2){$iceweak++;}
+                                if($Fighting3r == 2){$fightingweak++;}
+                                if($Poison3r == 2){$poisonweak++;}
+                                if($Ground3r == 2){$groundweak++;}
+                                if($Flying3r == 2){$flyingweak++;}
+                                if($Psychic3r == 2){$psychicweak++;}
+                                if($Bug3r == 2){$bugweak++;}
+                                if($Rock3r == 2){$rockweak++;}
+                                if($Ghost3r == 2){$ghostweak++;}
+                                if($Dragon3r == 2){$dragonweak++;}
+                                if($Dark3r == 2){$darkweak++;}
+                                if($Steel3r == 2){$steelweak++;}
+                                if($Fairy3r == 2){$fairyweak++;}
+                                if($Typeless3r == 2){$typelessweak++;}
+                                ?>
+
+<?php
+                            //idea for updating a value to create a weakness tracker: When a type has a weakness, update a relevant value, such as if a pokemon is weak to water (2x or 4x), update waterWeak by 1. Then, at the end, check all typeWeak numbers and echo team weaknesses if their value is 3 or greater.
+                                if($Normal4r == 4){$normalweak++;}
+                                if($Fire4r == 4){$fireweak++;}
+                                if($Water4r == 4){$waterweak++;}
+                                if($Grass4r == 4){$grassweak++;}
+                                if($Electric4r == 4){$electricweak++;}
+                                if($Ice4r == 4){$iceweak++;}
+                                if($Fighting4r == 4){$fightingweak++;}
+                                if($Poison4r == 4){$poisonweak++;}
+                                if($Ground4r == 4){$groundweak++;}
+                                if($Flying4r == 4){$flyingweak++;}
+                                if($Psychic4r == 4){$psychicweak++;}
+                                if($Bug4r == 4){$bugweak++;}
+                                if($Rock4r == 4){$rockweak++;}
+                                if($Ghost4r == 4){$ghostweak++;}
+                                if($Dragon4r == 4){$dragonweak++;}
+                                if($Dark4r == 4){$darkweak++;}
+                                if($Steel4r == 4){$steelweak++;}
+                                if($Fairy4r == 4){$fairyweak++;}
+                                if($Typeless4r == 4){$typelessweak++;}
+                            ?>
+							
+							<?php
+                                if($Normal4r == 2){$normalweak++;}
+                                if($Fire4r == 2){$fireweak++;}
+                                if($Water4r == 2){$waterweak++;}
+                                if($Grass4r == 2){$grassweak++;}
+                                if($Electric4r == 2){$electricweak++;}
+                                if($Ice4r == 2){$iceweak++;}
+                                if($Fighting4r == 2){$fightingweak++;}
+                                if($Poison4r == 2){$poisonweak++;}
+                                if($Ground4r == 2){$groundweak++;}
+                                if($Flying4r == 2){$flyingweak++;}
+                                if($Psychic4r == 2){$psychicweak++;}
+                                if($Bug4r == 2){$bugweak++;}
+                                if($Rock4r == 2){$rockweak++;}
+                                if($Ghost4r == 2){$ghostweak++;}
+                                if($Dragon4r == 2){$dragonweak++;}
+                                if($Dark4r == 2){$darkweak++;}
+                                if($Steel4r == 2){$steelweak++;}
+                                if($Fairy4r == 2){$fairyweak++;}
+                                if($Typeless4r == 2){$typelessweak++;}
+                                ?>
+
+<?php
+                            //idea for updating a value to create a weakness tracker: When a type has a weakness, update a relevant value, such as if a pokemon is weak to water (2x or 4x), update waterWeak by 1. Then, at the end, check all typeWeak numbers and echo team weaknesses if their value is 3 or greater.
+                                if($Normal5r == 4){$normalweak++;}
+                                if($Fire5r == 4){$fireweak++;}
+                                if($Water5r == 4){$waterweak++;}
+                                if($Grass5r == 4){$grassweak++;}
+                                if($Electric5r == 4){$electricweak++;}
+                                if($Ice5r == 4){$iceweak++;}
+                                if($Fighting5r == 4){$fightingweak++;}
+                                if($Poison5r == 4){$poisonweak++;}
+                                if($Ground5r == 4){$groundweak++;}
+                                if($Flying5r == 4){$flyingweak++;}
+                                if($Psychic5r == 4){$psychicweak++;}
+                                if($Bug5r == 4){$bugweak++;}
+                                if($Rock5r == 4){$rockweak++;}
+                                if($Ghost5r == 4){$ghostweak++;}
+                                if($Dragon5r == 4){$dragonweak++;}
+                                if($Dark5r == 4){$darkweak++;}
+                                if($Steel5r == 4){$steelweak++;}
+                                if($Fairy5r == 4){$fairyweak++;}
+                                if($Typeless5r == 4){$typelessweak++;}
+                            ?>
+							
+							<?php
+                                if($Normal5r == 2){$normalweak++;}
+                                if($Fire5r == 2){$fireweak++;}
+                                if($Water5r == 2){$waterweak++;}
+                                if($Grass5r == 2){$grassweak++;}
+                                if($Electric5r == 2){$electricweak++;}
+                                if($Ice5r == 2){$iceweak++;}
+                                if($Fighting5r == 2){$fightingweak++;}
+                                if($Poison5r == 2){$poisonweak++;}
+                                if($Ground5r == 2){$groundweak++;}
+                                if($Flying5r == 2){$flyingweak++;}
+                                if($Psychic5r == 2){$psychicweak++;}
+                                if($Bug5r == 2){$bugweak++;}
+                                if($Rock5r == 2){$rockweak++;}
+                                if($Ghost5r == 2){$ghostweak++;}
+                                if($Dragon5r == 2){$dragonweak++;}
+                                if($Dark5r == 2){$darkweak++;}
+                                if($Steel5r == 2){$steelweak++;}
+                                if($Fairy5r == 2){$fairyweak++;}
+                                if($Typeless5r == 2){$typelessweak++;}
+                                ?>
+
+<?php
+                            //idea for updating a value to create a weakness tracker: When a type has a weakness, update a relevant value, such as if a pokemon is weak to water (2x or 4x), update waterWeak by 1. Then, at the end, check all typeWeak numbers and echo team weaknesses if their value is 3 or greater.
+                                if($Normal6r == 4){$normalweak++;}
+                                if($Fire6r == 4){$fireweak++;}
+                                if($Water6r == 4){$waterweak++;}
+                                if($Grass6r == 4){$grassweak++;}
+                                if($Electric6r == 4){$electricweak++;}
+                                if($Ice6r == 4){$iceweak++;}
+                                if($Fighting6r == 4){$fightingweak++;}
+                                if($Poison6r == 4){$poisonweak++;}
+                                if($Ground6r == 4){$groundweak++;}
+                                if($Flying6r == 4){$flyingweak++;}
+                                if($Psychic6r == 4){$psychicweak++;}
+                                if($Bug6r == 4){$bugweak++;}
+                                if($Rock6r == 4){$rockweak++;}
+                                if($Ghost6r == 4){$ghostweak++;}
+                                if($Dragon6r == 4){$dragonweak++;}
+                                if($Dark6r == 4){$darkweak++;}
+                                if($Steel6r == 4){$steelweak++;}
+                                if($Fairy6r == 4){$fairyweak++;}
+                                if($Typeless6r == 4){$typelessweak++;}
+                            ?>
+							
+							<?php
+                                if($Normal6r == 2){$normalweak++;}
+                                if($Fire6r == 2){$fireweak++;}
+                                if($Water6r == 2){$waterweak++;}
+                                if($Grass6r == 2){$grassweak++;}
+                                if($Electric6r == 2){$electricweak++;}
+                                if($Ice6r == 2){$iceweak++;}
+                                if($Fighting6r == 2){$fightingweak++;}
+                                if($Poison6r == 2){$poisonweak++;}
+                                if($Ground6r == 2){$groundweak++;}
+                                if($Flying6r == 2){$flyingweak++;}
+                                if($Psychic6r == 2){$psychicweak++;}
+                                if($Bug6r == 2){$bugweak++;}
+                                if($Rock6r == 2){$rockweak++;}
+                                if($Ghost6r == 2){$ghostweak++;}
+                                if($Dragon6r == 2){$dragonweak++;}
+                                if($Dark6r == 2){$darkweak++;}
+                                if($Steel6r == 2){$steelweak++;}
+                                if($Fairy6r == 2){$fairyweak++;}
+                                if($Typeless6r == 2){$typelessweak++;}
+                                ?>
+
+<!-- Team Weakness on top -->
+<div class="row row-cols-1 row-cols-md-1 mb-1 text-center">
+
+					<div class="col">
+        				<div class="card mb-4 rounded-3 shadow-sm">
+
+          					<div class="card-header py-3">
+            					<h4 class="my-0 fw-normal">Team Weaknesses: (3 or more weak to the same type). Contributers to Team Weakness shown in Red.</h4>
+          					</div>
+          					<div class="card-body">
+							<?php
+                            //if typeweak >=3; say it
+                            if($normalweak >=3){echo "Normal<br>";}
+                            if($fireweak >=3){echo "Fire<br>";}
+                            if($waterweak >=3){echo "Water<br>";}
+                            if($grassweak >=3){echo "Grass<br>";}
+                            if($electricweak >=3){echo "Electric<br>";}
+                            if($iceweak >=3){echo "Ice<br>";}
+                            if($fightingweak >=3){echo "Fighting<br>";}
+                            if($poisonweak >=3){echo "Poison<br>";}
+                            if($groundweak >=3){echo "Ground<br>";}
+                            if($flyingweak >=3){echo "Flying<br>";}
+                            if($psychicweak >=3){echo "Psychic<br>";}
+                            if($bugweak >=3){echo "Bug<br>";}
+                            if($rockweak >=3){echo "Rock<br>";}
+                            if($ghostweak >=3){echo "Ghost<br>";}
+                            if($dragonweak >=3){echo "Dragon<br>";}
+                            if($darkweak >=3){echo "Dark<br>";}
+                            if($steelweak >=3){echo "Steel<br>";}
+                            if($fairyweak >=3){echo "Fairy<br>";}
+                            if($typelessweak >=3){echo "Bro is weak to Typeless get a new team man<br>";}
+
+                            ?>
+							</div>
+        				</div>
+      				</div>
+				</div>
+
+
+
+
+
+
+<div class="container py-3">
+    <div class="row row-cols-1 row-cols-md-6 mb-1 text-center">
+					<div class="card mb-4 rounded-3 shadow-sm" >
+                        
+          				<div class="card-header py-3" >
+                          <?php echo "$poke1"; ?>
+                           <br>
+                          Type 1: <?php echo "$type1 "; ?> <br>
+                          Type 2: <?php echo "$type2 "; ?>
+                            <div><strong>4x Weaknesses (4x dmg):</strong></div>
+                            <?php
+                            //idea for updating a value to create a weakness tracker: When a type has a weakness, update a relevant value, such as if a pokemon is weak to water (2x or 4x), update waterWeak by 1. Then, at the end, check all typeWeak numbers and echo team weaknesses if their value is 3 or greater.
+                            if($Normal1r == 4){if($normalweak>=3){echo  "<font color=red>Normal</font><br>";}else {echo "Normal<br>";}}
+                            if($Fire1r == 4){if($fireweak>=3){echo  "<font color=red>Fire</font><br>";}else {echo "Fire<br>";}}
+                            if($Water1r == 4){if($waterweak>=3){echo  "<font color=red>Water</font><br>";}else {echo "Water<br>";}}
+                            if($Grass1r == 4){if($grassweak>=3){echo  "<font color=red>Grass</font><br>";}else {echo "Grass<br>";}}
+                            if($Electric1r == 4){if($electricweak>=3){echo  "<font color=red>Electric</font><br>";}else {echo "Electric<br>";}}
+                            if($Ice1r == 4){if($iceweak>=3){echo  "<font color=red>Ice</font><br>";}else {echo "Ice<br>";}}
+                            if($Fighting1r == 4){if($fightingweak>=3){echo  "<font color=red>Fighting</font><br>";}else {echo "Fighting<br>";}}
+                            if($Poison1r == 4){if($poisonweak>=3){echo  "<font color=red>Poison</font><br>";}else {echo "Poison<br>";}}
+                            if($Ground1r == 4){if($groundweak>=3){echo  "<font color=red>Ground</font><br>";}else {echo "Ground<br>";}}
+                            if($Flying1r == 4){if($flyingweak>=3){echo  "<font color=red>Flying</font><br>";}else {echo "Flying<br>";}}
+                            if($Psychic1r == 4){if($psychicweak>=3){echo  "<font color=red>Psychic</font><br>";}else {echo "Psychic<br>";}}
+                            if($Bug1r == 4){if($bugweak>=3){echo  "<font color=red>Bug</font><br>";}else {echo "Bug<br>";}}
+                            if($Rock1r == 4){if($rockweak>=3){echo  "<font color=red>Rock</font><br>";}else {echo "Rock<br>";}}
+                            if($Ghost1r == 4){if($ghostweak>=3){echo  "<font color=red>Ghost</font><br>";}else {echo "Ghost<br>";}}
+                            if($Dragon1r == 4){if($dragonweak>=3){echo  "<font color=red>Dragon</font><br>";}else {echo "Dragon<br>";}}
+                            if($Dark1r == 4){if($darkweak>=3){echo  "<font color=red>Dark</font><br>";}else {echo "Dark<br>";}}
+                            if($Steel1r == 4){if($steelweak>=3){echo  "<font color=red>Steel</font><br>";}else {echo "Steel<br>";}}
+                            if($Fairy1r == 4){if($fairyweak>=3){echo  "<font color=red>Fairy</font><br>";}else {echo "Fairy<br>";}}
+                            if($Typeless1r == 4){if($typelessweak>=3){echo  "<font color=red>Typeless</font><br>";}else {echo "Typeless<br>";}}
+                            ?>
+							<div><strong>2x Weaknesses (2x dmg):</strong></div>
+							<?php
+                              if($Normal1r == 2){if($normalweak>=3){echo  "<font color=red>Normal</font><br>";}else {echo "Normal<br>";}}
+                              if($Fire1r == 2){if($fireweak>=3){echo  "<font color=red>Fire</font><br>";}else {echo "Fire<br>";}}
+                               if($Water1r == 2){if($waterweak>=3){echo  "<font color=red>Water</font><br>";}else {echo "Water<br>";}}
+                               if($Grass1r == 2){if($grassweak>=3){echo  "<font color=red>Grass</font><br>";}else {echo "Grass<br>";}}
+                               if($Electric1r == 2){if($electricweak>=3){echo  "<font color=red>Electric</font><br>";}else {echo "Electric<br>";}}
+                               if($Ice1r == 2){if($iceweak>=3){echo  "<font color=red>Ice</font><br>";}else {echo "Ice<br>";}}
+                               if($Fighting1r == 2){if($fightingweak>=3){echo  "<font color=red>Fighting</font><br>";}else {echo "Fighting<br>";}}
+                               if($Poison1r == 2){if($poisonweak>=3){echo  "<font color=red>Poison</font><br>";}else {echo "Poison<br>";}}
+                               if($Ground1r == 2){if($groundweak>=3){echo  "<font color=red>Ground</font><br>";}else {echo "Ground<br>";}}
+                               if($Flying1r == 2){if($flyingweak>=3){echo  "<font color=red>Flying</font><br>";}else {echo "Flying<br>";}}
+                               if($Psychic1r == 2){if($psychicweak>=3){echo  "<font color=red>Psychic</font><br>";}else {echo "Psychic<br>";}}
+                               if($Bug1r == 2){if($bugweak>=3){echo  "<font color=red>Bug</font><br>";}else {echo "Bug<br>";}}
+                               if($Rock1r == 2){if($rockweak>=3){echo  "<font color=red>Rock</font><br>";}else {echo "Rock<br>";}}
+                               if($Ghost1r == 2){if($ghostweak>=3){echo  "<font color=red>Ghost</font><br>";}else {echo "Ghost<br>";}}
+                               if($Dragon1r == 2){if($dragonweak>=3){echo  "<font color=red>Dragon</font><br>";}else {echo "Dragon<br>";}}
+                               if($Dark1r == 2){if($darkweak>=3){echo  "<font color=red>Dark</font><br>";}else {echo "Dark<br>";}}
+                               if($Steel1r == 2){if($steelweak>=3){echo  "<font color=red>Steel</font><br>";}else {echo "Steel<br>";}}
+                               if($Fairy1r == 2){if($fairyweak>=3){echo  "<font color=red>Fairy</font><br>";}else {echo "Fairy<br>";}}
+                               if($Typeless1r == 2){if($typelessweak>=3){echo  "<font color=red>Typeless</font><br>";}else {echo "Typeless<br>";}}
+                                ?>
+							<div><strong>2x Resistances (0.5x dmg):</strong></div>
+							<?php
+                                if($Normal1r == 0.5){echo "Normal<br>";}
+                                if($Fire1r == 0.5){echo "Fire<br>";}
+                                if($Water1r == 0.5){echo "Water<br>";}
+                                if($Grass1r == 0.5){echo "Grass<br>";}
+                                if($Electric1r == 0.5){echo "Electric<br>";}
+                                if($Ice1r == 0.5){echo "Ice<br>";}
+                                if($Fighting1r == 0.5){echo "Fighting<br>";}
+                                if($Poison1r == 0.5){echo "Poison<br>";}
+                                if($Ground1r == 0.5){echo "Ground<br>";}
+                                if($Flying1r == 0.5){echo "Flying<br>";}
+                                if($Psychic1r == 0.5){echo "Psychic<br>";}
+                                if($Bug1r == 0.5){echo "Bug<br>";}
+                                if($Rock1r == 0.5){echo "Rock<br>";}
+                                if($Ghost1r == 0.5){echo "Ghost<br>";}
+                                if($Dragon1r == 0.5){echo "Dragon<br>";}
+                                if($Dark1r == 0.5){echo "Dark<br>";}
+                                if($Steel1r == 0.5){echo "Steel<br>";}
+                                if($Fairy1r == 0.5){echo "Fairy<br>";}
+                                if($Typeless1r == 0.5){echo "Typeless<br>";}
+                                ?>
+                                <div><strong>4x Resistances (0.25x dmg):</strong></div>
+							<?php
+                                if($Normal1r == 0.25){echo "Normal<br>";}
+                                if($Fire1r == 0.25){echo "Fire<br>";}
+                                if($Water1r == 0.25){echo "Water<br>";}
+                                if($Grass1r == 0.25){echo "Grass<br>";}
+                                if($Electric1r == 0.25){echo "Electric<br>";}
+                                if($Ice1r == 0.25){echo "Ice<br>";}
+                                if($Fighting1r == 0.25){echo "Fighting<br>";}
+                                if($Poison1r == 0.25){echo "Poison<br>";}
+                                if($Ground1r == 0.25){echo "Ground<br>";}
+                                if($Flying1r == 0.25){echo "Flying<br>";}
+                                if($Psychic1r == 0.25){echo "Psychic<br>";}
+                                if($Bug1r == 0.25){echo "Bug<br>";}
+                                if($Rock1r == 0.25){echo "Rock<br>";}
+                                if($Ghost1r == 0.25){echo "Ghost<br>";}
+                                if($Dragon1r == 0.25){echo "Dragon<br>";}
+                                if($Dark1r == 0.25){echo "Dark<br>";}
+                                if($Steel1r == 0.25){echo "Steel<br>";}
+                                if($Fairy1r == 0.25){echo "Fairy<br>";}
+                                if($Typeless1r == 0.25){echo "Typeless<br>";}
+                                ?>
+							<div><strong>Immunities (0x dmg):</strong></div>
+							<?php
+                                if($Normal1r == 0){echo "Normal<br>";}
+                                if($Fire1r == 0){echo "Fire<br>";}
+                                if($Water1r == 0){echo "Water<br>";}
+                                if($Grass1r == 0){echo "Grass<br>";}
+                                if($Electric1r == 0){echo "Electric<br>";}
+                                if($Ice1r == 0){echo "Ice<br>";}
+                                if($Fighting1r == 0){echo "Fighting<br>";}
+                                if($Poison1r == 0){echo "Poison<br>";}
+                                if($Ground1r == 0){echo "Ground<br>";}
+                                if($Flying1r == 0){echo "Flying<br>";}
+                                if($Psychic1r == 0){echo "Psychic<br>";}
+                                if($Bug1r == 0){echo "Bug<br>";}
+                                if($Rock1r == 0){echo "Rock<br>";}
+                                if($Ghost1r == 0){echo "Ghost<br>";}
+                                if($Dragon1r == 0){echo "Dragon<br>";}
+                                if($Dark1r == 0){echo "Dark<br>";}
+                                if($Steel1r == 0){echo "Steel<br>";}
+                                if($Fairy1r == 0){echo "Fairy<br>";}
+                                if($Typeless1r == 0){echo "Typeless<br>";}
+                                ?>
+
+						</div>
+                        
+					</div>
+
+                    <div class="card mb-4 rounded-3 shadow-sm" >
+                        
+                        <div class="card-header py-3" >
+                        <?php echo "$poke2"; ?><br>
+                        Type 1: <?php echo "$type3 "; ?> <br>
+                        Type 2: <?php echo "$type4 "; ?>
+                        <div><strong>4x Weaknesses (4x dmg):</strong></div>
+                            <?php
+                            //idea for updating a value to create a weakness tracker: When a type has a weakness, update a relevant value, such as if a pokemon is weak to water (2x or 4x), update waterWeak by 1. Then, at the end, check all typeWeak numbers and echo team weaknesses if their value is 3 or greater.
+                            if($Normal2r == 4){if($normalweak>=3){echo  "<font color=red>Normal</font><br>";}else {echo "Normal<br>";}}
+                            if($Fire2r == 4){if($fireweak>=3){echo  "<font color=red>Fire</font><br>";}else {echo "Fire<br>";}}
+                            if($Water2r == 4){if($waterweak>=3){echo  "<font color=red>Water</font><br>";}else {echo "Water<br>";}}
+                            if($Grass2r == 4){if($grassweak>=3){echo  "<font color=red>Grass</font><br>";}else {echo "Grass<br>";}}
+                            if($Electric2r == 4){if($electricweak>=3){echo  "<font color=red>Electric</font><br>";}else {echo "Electric<br>";}}
+                            if($Ice2r == 4){if($iceweak>=3){echo  "<font color=red>Ice</font><br>";}else {echo "Ice<br>";}}
+                            if($Fighting2r == 4){if($fightingweak>=3){echo  "<font color=red>Fighting</font><br>";}else {echo "Fighting<br>";}}
+                            if($Poison2r == 4){if($poisonweak>=3){echo  "<font color=red>Poison</font><br>";}else {echo "Poison<br>";}}
+                            if($Ground2r == 4){if($groundweak>=3){echo  "<font color=red>Ground</font><br>";}else {echo "Ground<br>";}}
+                            if($Flying2r == 4){if($flyingweak>=3){echo  "<font color=red>Flying</font><br>";}else {echo "Flying<br>";}}
+                            if($Psychic2r == 4){if($psychicweak>=3){echo  "<font color=red>Psychic</font><br>";}else {echo "Psychic<br>";}}
+                            if($Bug2r == 4){if($bugweak>=3){echo  "<font color=red>Bug</font><br>";}else {echo "Bug<br>";}}
+                            if($Rock2r == 4){if($rockweak>=3){echo  "<font color=red>Rock</font><br>";}else {echo "Rock<br>";}}
+                            if($Ghost2r == 4){if($ghostweak>=3){echo  "<font color=red>Ghost</font><br>";}else {echo "Ghost<br>";}}
+                            if($Dragon2r == 4){if($dragonweak>=3){echo  "<font color=red>Dragon</font><br>";}else {echo "Dragon<br>";}}
+                            if($Dark2r == 4){if($darkweak>=3){echo  "<font color=red>Dark</font><br>";}else {echo "Dark<br>";}}
+                            if($Steel2r == 4){if($steelweak>=3){echo  "<font color=red>Steel</font><br>";}else {echo "Steel<br>";}}
+                            if($Fairy2r == 4){if($fairyweak>=3){echo  "<font color=red>Fairy</font><br>";}else {echo "Fairy<br>";}}
+                            if($Typeless2r == 4){if($typelessweak>=3){echo  "<font color=red>Typeless</font><br>";}else {echo "Typeless<br>";}}
+                            ?>
+							<div><strong>2x Weaknesses (2x dmg):</strong></div>
+							<?php
+                             if($Normal2r == 2){if($normalweak>=3){echo  "<font color=red>Normal</font><br>";}else {echo "Normal<br>";}}
+                             if($Fire2r == 2){if($fireweak>=3){echo  "<font color=red>Fire</font><br>";}else {echo "Fire<br>";}}
+                               if($Water2r == 2){if($waterweak>=3){echo  "<font color=red>Water</font><br>";}else {echo "Water<br>";}}
+                               if($Grass2r == 2){if($grassweak>=3){echo  "<font color=red>Grass</font><br>";}else {echo "Grass<br>";}}
+                               if($Electric2r == 2){if($electricweak>=3){echo  "<font color=red>Electric</font><br>";}else {echo "Electric<br>";}}
+                               if($Ice2r == 2){if($iceweak>=3){echo  "<font color=red>Ice</font><br>";}else {echo "Ice<br>";}}
+                               if($Fighting2r == 2){if($fightingweak>=3){echo  "<font color=red>Fighting</font><br>";}else {echo "Fighting<br>";}}
+                               if($Poison2r == 2){if($poisonweak>=3){echo  "<font color=red>Poison</font><br>";}else {echo "Poison<br>";}}
+                               if($Ground2r == 2){if($groundweak>=3){echo  "<font color=red>Ground</font><br>";}else {echo "Ground<br>";}}
+                               if($Flying2r == 2){if($flyingweak>=3){echo  "<font color=red>Flying</font><br>";}else {echo "Flying<br>";}}
+                               if($Psychic2r == 2){if($psychicweak>=3){echo  "<font color=red>Psychic</font><br>";}else {echo "Psychic<br>";}}
+                               if($Bug2r == 2){if($bugweak>=3){echo  "<font color=red>Bug</font><br>";}else {echo "Bug<br>";}}
+                               if($Rock2r == 2){if($rockweak>=3){echo  "<font color=red>Rock</font><br>";}else {echo "Rock<br>";}}
+                               if($Ghost2r == 2){if($ghostweak>=3){echo  "<font color=red>Ghost</font><br>";}else {echo "Ghost<br>";}}
+                               if($Dragon2r == 2){if($dragonweak>=3){echo  "<font color=red>Dragon</font><br>";}else {echo "Dragon<br>";}}
+                               if($Dark2r == 2){if($darkweak>=3){echo  "<font color=red>Dark</font><br>";}else {echo "Dark<br>";}}
+                               if($Steel2r == 2){if($steelweak>=3){echo  "<font color=red>Steel</font><br>";}else {echo "Steel<br>";}}
+                               if($Fairy2r == 2){if($fairyweak>=3){echo  "<font color=red>Fairy</font><br>";}else {echo "Fairy<br>";}}
+                               if($Typeless2r == 2){if($typelessweak>=3){echo  "<font color=red>Typeless</font><br>";}else {echo "Typeless<br>";}}
+                                ?>
+                          <div><strong>2x Resistances (0.5x dmg):</strong></div>
+                          <?php
+                              if($Normal2r == 0.5){echo "Normal<br>";}
+                              if($Fire2r == 0.5){echo "Fire<br>";}
+                              if($Water2r == 0.5){echo "Water<br>";}
+                              if($Grass2r == 0.5){echo "Grass<br>";}
+                              if($Electric2r == 0.5){echo "Electric<br>";}
+                              if($Ice2r == 0.5){echo "Ice<br>";}
+                              if($Fighting2r == 0.5){echo "Fighting<br>";}
+                              if($Poison2r == 0.5){echo "Poison<br>";}
+                              if($Ground2r == 0.5){echo "Ground<br>";}
+                              if($Flying2r == 0.5){echo "Flying<br>";}
+                              if($Psychic2r == 0.5){echo "Psychic<br>";}
+                              if($Bug2r == 0.5){echo "Bug<br>";}
+                              if($Rock2r == 0.5){echo "Rock<br>";}
+                              if($Ghost2r == 0.5){echo "Ghost<br>";}
+                              if($Dragon2r == 0.5){echo "Dragon<br>";}
+                              if($Dark2r == 0.5){echo "Dark<br>";}
+                              if($Steel2r == 0.5){echo "Steel<br>";}
+                              if($Fairy2r == 0.5){echo "Fairy<br>";}
+                              if($Typeless2r == 0.5){echo "Typeless<br>";}
+                              ?>
+                              <div><strong>4x Resistances (0.25x dmg):</strong></div>
+                          <?php
+                              if($Normal2r == 0.25){echo "Normal<br>";}
+                              if($Fire2r == 0.25){echo "Fire<br>";}
+                              if($Water2r == 0.25){echo "Water<br>";}
+                              if($Grass2r == 0.25){echo "Grass<br>";}
+                              if($Electric2r == 0.25){echo "Electric<br>";}
+                              if($Ice2r == 0.25){echo "Ice<br>";}
+                              if($Fighting2r == 0.25){echo "Fighting<br>";}
+                              if($Poison2r == 0.25){echo "Poison<br>";}
+                              if($Ground2r == 0.25){echo "Ground<br>";}
+                              if($Flying2r == 0.25){echo "Flying<br>";}
+                              if($Psychic2r == 0.25){echo "Psychic<br>";}
+                              if($Bug2r == 0.25){echo "Bug<br>";}
+                              if($Rock2r == 0.25){echo "Rock<br>";}
+                              if($Ghost2r == 0.25){echo "Ghost<br>";}
+                              if($Dragon2r == 0.25){echo "Dragon<br>";}
+                              if($Dark2r == 0.25){echo "Dark<br>";}
+                              if($Steel2r == 0.25){echo "Steel<br>";}
+                              if($Fairy2r == 0.25){echo "Fairy<br>";}
+                              if($Typeless2r == 0.25){echo "Typeless<br>";}
+                              ?>
+                          <div><strong>Immunities (0x dmg):</strong></div>
+                          <?php
+                              if($Normal2r == 0){echo "Normal<br>";}
+                              if($Fire2r == 0){echo "Fire<br>";}
+                              if($Water2r == 0){echo "Water<br>";}
+                              if($Grass2r == 0){echo "Grass<br>";}
+                              if($Electric2r == 0){echo "Electric<br>";}
+                              if($Ice2r == 0){echo "Ice<br>";}
+                              if($Fighting2r == 0){echo "Fighting<br>";}
+                              if($Poison2r == 0){echo "Poison<br>";}
+                              if($Ground2r == 0){echo "Ground<br>";}
+                              if($Flying2r == 0){echo "Flying<br>";}
+                              if($Psychic2r == 0){echo "Psychic<br>";}
+                              if($Bug2r == 0){echo "Bug<br>";}
+                              if($Rock2r == 0){echo "Rock<br>";}
+                              if($Ghost2r == 0){echo "Ghost<br>";}
+                              if($Dragon2r == 0){echo "Dragon<br>";}
+                              if($Dark2r == 0){echo "Dark<br>";}
+                              if($Steel2r == 0){echo "Steel<br>";}
+                              if($Fairy2r == 0){echo "Fairy<br>";}
+                              if($Typeless2r == 0){echo "Typeless<br>";}
+                              ?>
+
+                      </div>
+                      
+                  </div>
+					
+                  <div class="card mb-4 rounded-3 shadow-sm" >
+                        
+                        <div class="card-header py-3" >
+                        <?php echo "$poke3"; ?><br>
+                        Type 1: <?php echo "$type5 "; ?> <br>
+                        Type 2: <?php echo "$type6 "; ?>
+                        <div><strong>4x Weaknesses (4x dmg):</strong></div>
+                            <?php
+                            //idea for updating a value to create a weakness tracker: When a type has a weakness, update a relevant value, such as if a pokemon is weak to water (2x or 4x), update waterWeak by 1. Then, at the end, check all typeWeak numbers and echo team weaknesses if their value is 3 or greater.
+                            if($Normal3r == 4){if($normalweak>=3){echo  "<font color=red>Normal</font><br>";}else {echo "Normal<br>";}}
+                            if($Fire3r == 4){if($fireweak>=3){echo  "<font color=red>Fire</font><br>";}else {echo "Fire<br>";}}
+                            if($Water3r == 4){if($waterweak>=3){echo  "<font color=red>Water</font><br>";}else {echo "Water<br>";}}
+                            if($Grass3r == 4){if($grassweak>=3){echo  "<font color=red>Grass</font><br>";}else {echo "Grass<br>";}}
+                            if($Electric3r == 4){if($electricweak>=3){echo  "<font color=red>Electric</font><br>";}else {echo "Electric<br>";}}
+                            if($Ice3r == 4){if($iceweak>=3){echo  "<font color=red>Ice</font><br>";}else {echo "Ice<br>";}}
+                            if($Fighting3r == 4){if($fightingweak>=3){echo  "<font color=red>Fighting</font><br>";}else {echo "Fighting<br>";}}
+                            if($Poison3r == 4){if($poisonweak>=3){echo  "<font color=red>Poison</font><br>";}else {echo "Poison<br>";}}
+                            if($Ground3r == 4){if($groundweak>=3){echo  "<font color=red>Ground</font><br>";}else {echo "Ground<br>";}}
+                            if($Flying3r == 4){if($flyingweak>=3){echo  "<font color=red>Flying</font><br>";}else {echo "Flying<br>";}}
+                            if($Psychic3r == 4){if($psychicweak>=3){echo  "<font color=red>Psychic</font><br>";}else {echo "Psychic<br>";}}
+                            if($Bug3r == 4){if($bugweak>=3){echo  "<font color=red>Bug</font><br>";}else {echo "Bug<br>";}}
+                            if($Rock3r == 4){if($rockweak>=3){echo  "<font color=red>Rock</font><br>";}else {echo "Rock<br>";}}
+                            if($Ghost3r == 4){if($ghostweak>=3){echo  "<font color=red>Ghost</font><br>";}else {echo "Ghost<br>";}}
+                            if($Dragon3r == 4){if($dragonweak>=3){echo  "<font color=red>Dragon</font><br>";}else {echo "Dragon<br>";}}
+                            if($Dark3r == 4){if($darkweak>=3){echo  "<font color=red>Dark</font><br>";}else {echo "Dark<br>";}}
+                            if($Steel3r == 4){if($steelweak>=3){echo  "<font color=red>Steel</font><br>";}else {echo "Steel<br>";}}
+                            if($Fairy3r == 4){if($fairyweak>=3){echo  "<font color=red>Fairy</font><br>";}else {echo "Fairy<br>";}}
+                            if($Typeless3r == 4){if($typelessweak>=3){echo  "<font color=red>Typeless</font><br>";}else {echo "Typeless<br>";}}
+                            ?>
+							<div><strong>2x Weaknesses (2x dmg):</strong></div>
+							<?php
+                            if($Normal3r == 2){if($normalweak>=3){echo  "<font color=red>Normal</font><br>";}else {echo "Normal<br>";}}
+                            if($Fire3r == 2){if($fireweak>=3){echo  "<font color=red>Fire</font><br>";}else {echo "Fire<br>";}}
+                               if($Water3r == 2){if($waterweak>=3){echo  "<font color=red>Water</font><br>";}else {echo "Water<br>";}}
+                               if($Grass3r == 2){if($grassweak>=3){echo  "<font color=red>Grass</font><br>";}else {echo "Grass<br>";}}
+                               if($Electric3r == 2){if($electricweak>=3){echo  "<font color=red>Electric</font><br>";}else {echo "Electric<br>";}}
+                               if($Ice3r == 2){if($iceweak>=3){echo  "<font color=red>Ice</font><br>";}else {echo "Ice<br>";}}
+                               if($Fighting3r == 2){if($fightingweak>=3){echo  "<font color=red>Fighting</font><br>";}else {echo "Fighting<br>";}}
+                               if($Poison3r == 2){if($poisonweak>=3){echo  "<font color=red>Poison</font><br>";}else {echo "Poison<br>";}}
+                               if($Ground3r == 2){if($groundweak>=3){echo  "<font color=red>Ground</font><br>";}else {echo "Ground<br>";}}
+                               if($Flying3r == 2){if($flyingweak>=3){echo  "<font color=red>Flying</font><br>";}else {echo "Flying<br>";}}
+                               if($Psychic3r == 2){if($psychicweak>=3){echo  "<font color=red>Psychic</font><br>";}else {echo "Psychic<br>";}}
+                               if($Bug3r == 2){if($bugweak>=3){echo  "<font color=red>Bug</font><br>";}else {echo "Bug<br>";}}
+                               if($Rock3r == 2){if($rockweak>=3){echo  "<font color=red>Rock</font><br>";}else {echo "Rock<br>";}}
+                               if($Ghost3r == 2){if($ghostweak>=3){echo  "<font color=red>Ghost</font><br>";}else {echo "Ghost<br>";}}
+                               if($Dragon3r == 2){if($dragonweak>=3){echo  "<font color=red>Dragon</font><br>";}else {echo "Dragon<br>";}}
+                               if($Dark3r == 2){if($darkweak>=3){echo  "<font color=red>Dark</font><br>";}else {echo "Dark<br>";}}
+                               if($Steel3r == 2){if($steelweak>=3){echo  "<font color=red>Steel</font><br>";}else {echo "Steel<br>";}}
+                               if($Fairy3r == 2){if($fairyweak>=3){echo  "<font color=red>Fairy</font><br>";}else {echo "Fairy<br>";}}
+                               if($Typeless3r == 2){if($typelessweak>=3){echo  "<font color=red>Typeless</font><br>";}else {echo "Typeless<br>";}}
+                                ?>
+                          <div><strong>2x Resistances (0.5x dmg):</strong></div>
+                          <?php
+                              if($Normal3r == 0.5){echo "Normal<br>";}
+                              if($Fire3r == 0.5){echo "Fire<br>";}
+                              if($Water3r == 0.5){echo "Water<br>";}
+                              if($Grass3r == 0.5){echo "Grass<br>";}
+                              if($Electric3r == 0.5){echo "Electric<br>";}
+                              if($Ice3r == 0.5){echo "Ice<br>";}
+                              if($Fighting3r == 0.5){echo "Fighting<br>";}
+                              if($Poison3r == 0.5){echo "Poison<br>";}
+                              if($Ground3r == 0.5){echo "Ground<br>";}
+                              if($Flying3r == 0.5){echo "Flying<br>";}
+                              if($Psychic3r == 0.5){echo "Psychic<br>";}
+                              if($Bug3r == 0.5){echo "Bug<br>";}
+                              if($Rock3r == 0.5){echo "Rock<br>";}
+                              if($Ghost3r == 0.5){echo "Ghost<br>";}
+                              if($Dragon3r == 0.5){echo "Dragon<br>";}
+                              if($Dark3r == 0.5){echo "Dark<br>";}
+                              if($Steel3r == 0.5){echo "Steel<br>";}
+                              if($Fairy3r == 0.5){echo "Fairy<br>";}
+                              if($Typeless3r == 0.5){echo "Typeless<br>";}
+                              ?>
+                              <div><strong>4x Resistances (0.25x dmg):</strong></div>
+                          <?php
+                              if($Normal3r == 0.25){echo "Normal<br>";}
+                              if($Fire3r == 0.25){echo "Fire<br>";}
+                              if($Water3r == 0.25){echo "Water<br>";}
+                              if($Grass3r == 0.25){echo "Grass<br>";}
+                              if($Electric3r == 0.25){echo "Electric<br>";}
+                              if($Ice3r == 0.25){echo "Ice<br>";}
+                              if($Fighting3r == 0.25){echo "Fighting<br>";}
+                              if($Poison3r == 0.25){echo "Poison<br>";}
+                              if($Ground3r == 0.25){echo "Ground<br>";}
+                              if($Flying3r == 0.25){echo "Flying<br>";}
+                              if($Psychic3r == 0.25){echo "Psychic<br>";}
+                              if($Bug3r == 0.25){echo "Bug<br>";}
+                              if($Rock3r == 0.25){echo "Rock<br>";}
+                              if($Ghost3r == 0.25){echo "Ghost<br>";}
+                              if($Dragon3r == 0.25){echo "Dragon<br>";}
+                              if($Dark3r == 0.25){echo "Dark<br>";}
+                              if($Steel3r == 0.25){echo "Steel<br>";}
+                              if($Fairy3r == 0.25){echo "Fairy<br>";}
+                              if($Typeless3r == 0.25){echo "Typeless<br>";}
+                              ?>
+                          <div><strong>Immunities (0x dmg):</strong></div>
+                          <?php
+                              if($Normal3r == 0){echo "Normal<br>";}
+                              if($Fire3r == 0){echo "Fire<br>";}
+                              if($Water3r == 0){echo "Water<br>";}
+                              if($Grass3r == 0){echo "Grass<br>";}
+                              if($Electric3r == 0){echo "Electric<br>";}
+                              if($Ice3r == 0){echo "Ice<br>";}
+                              if($Fighting3r == 0){echo "Fighting<br>";}
+                              if($Poison3r == 0){echo "Poison<br>";}
+                              if($Ground3r == 0){echo "Ground<br>";}
+                              if($Flying3r == 0){echo "Flying<br>";}
+                              if($Psychic3r == 0){echo "Psychic<br>";}
+                              if($Bug3r == 0){echo "Bug<br>";}
+                              if($Rock3r == 0){echo "Rock<br>";}
+                              if($Ghost3r == 0){echo "Ghost<br>";}
+                              if($Dragon3r == 0){echo "Dragon<br>";}
+                              if($Dark3r == 0){echo "Dark<br>";}
+                              if($Steel3r == 0){echo "Steel<br>";}
+                              if($Fairy3r == 0){echo "Fairy<br>";}
+                              if($Typeless3r == 0){echo "Typeless<br>";}
+                              ?>
+
+                      </div>
+                      
+                  </div>	
+
+                  <div class="card mb-4 rounded-3 shadow-sm" >
+                        
+                        <div class="card-header py-3" >
+                        <?php echo "$poke4"; ?> <br>
+                        Type 1: <?php echo "$type7 "; ?> <br>
+                        Type 2: <?php echo "$type8 "; ?>
+                        <div><strong>4x Weaknesses (4x dmg):</strong></div>
+                            <?php
+                            //idea for updating a value to create a weakness tracker: When a type has a weakness, update a relevant value, such as if a pokemon is weak to water (2x or 4x), update waterWeak by 1. Then, at the end, check all typeWeak numbers and echo team weaknesses if their value is 3 or greater.
+                            if($Normal4r == 4){if($normalweak>=3){echo  "<font color=red>Normal</font><br>";}else {echo "Normal<br>";}}
+                            if($Fire4r == 4){if($fireweak>=3){echo  "<font color=red>Fire</font><br>";}else {echo "Fire<br>";}}
+                            if($Water4r == 4){if($waterweak>=3){echo  "<font color=red>Water</font><br>";}else {echo "Water<br>";}}
+                            if($Grass4r == 4){if($grassweak>=3){echo  "<font color=red>Grass</font><br>";}else {echo "Grass<br>";}}
+                            if($Electric4r == 4){if($electricweak>=3){echo  "<font color=red>Electric</font><br>";}else {echo "Electric<br>";}}
+                            if($Ice4r == 4){if($iceweak>=3){echo  "<font color=red>Ice</font><br>";}else {echo "Ice<br>";}}
+                            if($Fighting4r == 4){if($fightingweak>=3){echo  "<font color=red>Fighting</font><br>";}else {echo "Fighting<br>";}}
+                            if($Poison4r == 4){if($poisonweak>=3){echo  "<font color=red>Poison</font><br>";}else {echo "Poison<br>";}}
+                            if($Ground4r == 4){if($groundweak>=3){echo  "<font color=red>Ground</font><br>";}else {echo "Ground<br>";}}
+                            if($Flying4r == 4){if($flyingweak>=3){echo  "<font color=red>Flying</font><br>";}else {echo "Flying<br>";}}
+                            if($Psychic4r == 4){if($psychicweak>=3){echo  "<font color=red>Psychic</font><br>";}else {echo "Psychic<br>";}}
+                            if($Bug4r == 4){if($bugweak>=3){echo  "<font color=red>Bug</font><br>";}else {echo "Bug<br>";}}
+                            if($Rock4r == 4){if($rockweak>=3){echo  "<font color=red>Rock</font><br>";}else {echo "Rock<br>";}}
+                            if($Ghost4r == 4){if($ghostweak>=3){echo  "<font color=red>Ghost</font><br>";}else {echo "Ghost<br>";}}
+                            if($Dragon4r == 4){if($dragonweak>=3){echo  "<font color=red>Dragon</font><br>";}else {echo "Dragon<br>";}}
+                            if($Dark4r == 4){if($darkweak>=3){echo  "<font color=red>Dark</font><br>";}else {echo "Dark<br>";}}
+                            if($Steel4r == 4){if($steelweak>=3){echo  "<font color=red>Steel</font><br>";}else {echo "Steel<br>";}}
+                            if($Fairy4r == 4){if($fairyweak>=3){echo  "<font color=red>Fairy</font><br>";}else {echo "Fairy<br>";}}
+                            if($Typeless4r == 4){if($typelessweak>=3){echo  "<font color=red>Typeless</font><br>";}else {echo "Typeless<br>";}}
+                            ?>
+							<div><strong>2x Weaknesses (2x dmg):</strong></div>
+							<?php
+                            if($Normal4r == 2){if($normalweak>=3){echo  "<font color=red>Normal</font><br>";}else {echo "Normal<br>";}}
+                            if($Fire4r == 2){if($fireweak>=3){echo  "<font color=red>Fire</font><br>";}else {echo "Fire<br>";}}
+                               if($Water4r == 2){if($waterweak>=3){echo  "<font color=red>Water</font><br>";}else {echo "Water<br>";}}
+                               if($Grass4r == 2){if($grassweak>=3){echo  "<font color=red>Grass</font><br>";}else {echo "Grass<br>";}}
+                               if($Electric4r == 2){if($electricweak>=3){echo  "<font color=red>Electric</font><br>";}else {echo "Electric<br>";}}
+                               if($Ice4r == 2){if($iceweak>=3){echo  "<font color=red>Ice</font><br>";}else {echo "Ice<br>";}}
+                               if($Fighting4r == 2){if($fightingweak>=3){echo  "<font color=red>Fighting</font><br>";}else {echo "Fighting<br>";}}
+                               if($Poison4r == 2){if($poisonweak>=3){echo  "<font color=red>Poison</font><br>";}else {echo "Poison<br>";}}
+                               if($Ground4r == 2){if($groundweak>=3){echo  "<font color=red>Ground</font><br>";}else {echo "Ground<br>";}}
+                               if($Flying4r == 2){if($flyingweak>=3){echo  "<font color=red>Flying</font><br>";}else {echo "Flying<br>";}}
+                               if($Psychic4r == 2){if($psychicweak>=3){echo  "<font color=red>Psychic</font><br>";}else {echo "Psychic<br>";}}
+                               if($Bug4r == 2){if($bugweak>=3){echo  "<font color=red>Bug</font><br>";}else {echo "Bug<br>";}}
+                               if($Rock4r == 2){if($rockweak>=3){echo  "<font color=red>Rock</font><br>";}else {echo "Rock<br>";}}
+                               if($Ghost4r == 2){if($ghostweak>=3){echo  "<font color=red>Ghost</font><br>";}else {echo "Ghost<br>";}}
+                               if($Dragon4r == 2){if($dragonweak>=3){echo  "<font color=red>Dragon</font><br>";}else {echo "Dragon<br>";}}
+                               if($Dark4r == 2){if($darkweak>=3){echo  "<font color=red>Dark</font><br>";}else {echo "Dark<br>";}}
+                               if($Steel4r == 2){if($steelweak>=3){echo  "<font color=red>Steel</font><br>";}else {echo "Steel<br>";}}
+                               if($Fairy4r == 2){if($fairyweak>=3){echo  "<font color=red>Fairy</font><br>";}else {echo "Fairy<br>";}}
+                               if($Typeless4r == 2){if($typelessweak>=3){echo  "<font color=red>Typeless</font><br>";}else {echo "Typeless<br>";}}
+                                ?>
+                          <div><strong>2x Resistances (0.5x dmg):</strong></div>
+                          <?php
+                              if($Normal4r == 0.5){echo "Normal<br>";}
+                              if($Fire4r == 0.5){echo "Fire<br>";}
+                              if($Water4r == 0.5){echo "Water<br>";}
+                              if($Grass4r == 0.5){echo "Grass<br>";}
+                              if($Electric4r == 0.5){echo "Electric<br>";}
+                              if($Ice4r == 0.5){echo "Ice<br>";}
+                              if($Fighting4r == 0.5){echo "Fighting<br>";}
+                              if($Poison4r == 0.5){echo "Poison<br>";}
+                              if($Ground4r == 0.5){echo "Ground<br>";}
+                              if($Flying4r == 0.5){echo "Flying<br>";}
+                              if($Psychic4r == 0.5){echo "Psychic<br>";}
+                              if($Bug4r == 0.5){echo "Bug<br>";}
+                              if($Rock4r == 0.5){echo "Rock<br>";}
+                              if($Ghost4r == 0.5){echo "Ghost<br>";}
+                              if($Dragon4r == 0.5){echo "Dragon<br>";}
+                              if($Dark4r == 0.5){echo "Dark<br>";}
+                              if($Steel4r == 0.5){echo "Steel<br>";}
+                              if($Fairy4r == 0.5){echo "Fairy<br>";}
+                              if($Typeless4r == 0.5){echo "Typeless<br>";}
+                              ?>
+                              <div><strong>4x Resistances (0.25x dmg):</strong></div>
+                          <?php
+                              if($Normal4r == 0.25){echo "Normal<br>";}
+                              if($Fire4r == 0.25){echo "Fire<br>";}
+                              if($Water4r == 0.25){echo "Water<br>";}
+                              if($Grass4r == 0.25){echo "Grass<br>";}
+                              if($Electric4r == 0.25){echo "Electric<br>";}
+                              if($Ice4r == 0.25){echo "Ice<br>";}
+                              if($Fighting4r == 0.25){echo "Fighting<br>";}
+                              if($Poison4r == 0.25){echo "Poison<br>";}
+                              if($Ground4r == 0.25){echo "Ground<br>";}
+                              if($Flying4r == 0.25){echo "Flying<br>";}
+                              if($Psychic4r == 0.25){echo "Psychic<br>";}
+                              if($Bug4r == 0.25){echo "Bug<br>";}
+                              if($Rock4r == 0.25){echo "Rock<br>";}
+                              if($Ghost4r == 0.25){echo "Ghost<br>";}
+                              if($Dragon4r == 0.25){echo "Dragon<br>";}
+                              if($Dark4r == 0.25){echo "Dark<br>";}
+                              if($Steel4r == 0.25){echo "Steel<br>";}
+                              if($Fairy4r == 0.25){echo "Fairy<br>";}
+                              if($Typeless4r == 0.25){echo "Typeless<br>";}
+                              ?>
+                          <div><strong>Immunities (0x dmg):</strong></div>
+                          <?php
+                              if($Normal4r == 0){echo "Normal<br>";}
+                              if($Fire4r == 0){echo "Fire<br>";}
+                              if($Water4r == 0){echo "Water<br>";}
+                              if($Grass4r == 0){echo "Grass<br>";}
+                              if($Electric4r == 0){echo "Electric<br>";}
+                              if($Ice4r == 0){echo "Ice<br>";}
+                              if($Fighting4r == 0){echo "Fighting<br>";}
+                              if($Poison4r == 0){echo "Poison<br>";}
+                              if($Ground4r == 0){echo "Ground<br>";}
+                              if($Flying4r == 0){echo "Flying<br>";}
+                              if($Psychic4r == 0){echo "Psychic<br>";}
+                              if($Bug4r == 0){echo "Bug<br>";}
+                              if($Rock4r == 0){echo "Rock<br>";}
+                              if($Ghost4r == 0){echo "Ghost<br>";}
+                              if($Dragon4r == 0){echo "Dragon<br>";}
+                              if($Dark4r == 0){echo "Dark<br>";}
+                              if($Steel4r == 0){echo "Steel<br>";}
+                              if($Fairy4r == 0){echo "Fairy<br>";}
+                              if($Typeless4r == 0){echo "Typeless<br>";}
+                              ?>
+
+                      </div>
+                      
+                  </div>
+
+                  <div class="card mb-4 rounded-3 shadow-sm" >
+                        
+                        <div class="card-header py-3" >
+                        <?php echo "$poke5"; ?> <br>
+                        Type 1: <?php echo "$type9 "; ?> <br>
+                        Type 2: <?php echo "$type10 "; ?>
+                        <div><strong>4x Weaknesses (4x dmg):</strong></div>
+                            <?php
+                            //idea for updating a value to create a weakness tracker: When a type has a weakness, update a relevant value, such as if a pokemon is weak to water (2x or 4x), update waterWeak by 1. Then, at the end, check all typeWeak numbers and echo team weaknesses if their value is 3 or greater.
+                            if($Normal5r == 4){if($normalweak>=3){echo  "<font color=red>Normal</font><br>";}else {echo "Normal<br>";}}
+                            if($Fire5r == 4){if($fireweak>=3){echo  "<font color=red>Fire</font><br>";}else {echo "Fire<br>";}}
+                            if($Water5r == 4){if($waterweak>=3){echo  "<font color=red>Water</font><br>";}else {echo "Water<br>";}}
+                            if($Grass5r == 4){if($grassweak>=3){echo  "<font color=red>Grass</font><br>";}else {echo "Grass<br>";}}
+                            if($Electric5r == 4){if($electricweak>=3){echo  "<font color=red>Electric</font><br>";}else {echo "Electric<br>";}}
+                            if($Ice5r == 4){if($iceweak>=3){echo  "<font color=red>Ice</font><br>";}else {echo "Ice<br>";}}
+                            if($Fighting5r == 4){if($fightingweak>=3){echo  "<font color=red>Fighting</font><br>";}else {echo "Fighting<br>";}}
+                            if($Poison5r == 4){if($poisonweak>=3){echo  "<font color=red>Poison</font><br>";}else {echo "Poison<br>";}}
+                            if($Ground5r == 4){if($groundweak>=3){echo  "<font color=red>Ground</font><br>";}else {echo "Ground<br>";}}
+                            if($Flying5r == 4){if($flyingweak>=3){echo  "<font color=red>Flying</font><br>";}else {echo "Flying<br>";}}
+                            if($Psychic5r == 4){if($psychicweak>=3){echo  "<font color=red>Psychic</font><br>";}else {echo "Psychic<br>";}}
+                            if($Bug5r == 4){if($bugweak>=3){echo  "<font color=red>Bug</font><br>";}else {echo "Bug<br>";}}
+                            if($Rock5r == 4){if($rockweak>=3){echo  "<font color=red>Rock</font><br>";}else {echo "Rock<br>";}}
+                            if($Ghost5r == 4){if($ghostweak>=3){echo  "<font color=red>Ghost</font><br>";}else {echo "Ghost<br>";}}
+                            if($Dragon5r == 4){if($dragonweak>=3){echo  "<font color=red>Dragon</font><br>";}else {echo "Dragon<br>";}}
+                            if($Dark5r == 4){if($darkweak>=3){echo  "<font color=red>Dark</font><br>";}else {echo "Dark<br>";}}
+                            if($Steel5r == 4){if($steelweak>=3){echo  "<font color=red>Steel</font><br>";}else {echo "Steel<br>";}}
+                            if($Fairy5r == 4){if($fairyweak>=3){echo  "<font color=red>Fairy</font><br>";}else {echo "Fairy<br>";}}
+                            if($Typeless5r == 4){if($typelessweak>=3){echo  "<font color=red>Typeless</font><br>";}else {echo "Typeless<br>";}}
+                            ?>
+							<div><strong>2x Weaknesses (2x dmg):</strong></div>
+							<?php
+                             if($Normal5r == 4){if($normalweak>=3){echo  "<font color=red>Normal</font><br>";}else {echo "Normal<br>";}}
+                             if($Fire5r == 4){if($fireweak>=3){echo  "<font color=red>Fire</font><br>";}else {echo "Fire<br>";}}
+                               if($Water5r == 2){if($waterweak>=3){echo  "<font color=red>Water</font><br>";}else {echo "Water<br>";}}
+                               if($Grass5r == 2){if($grassweak>=3){echo  "<font color=red>Grass</font><br>";}else {echo "Grass<br>";}}
+                               if($Electric5r == 2){if($electricweak>=3){echo  "<font color=red>Electric</font><br>";}else {echo "Electric<br>";}}
+                               if($Ice5r == 2){if($iceweak>=3){echo  "<font color=red>Ice</font><br>";}else {echo "Ice<br>";}}
+                               if($Fighting5r == 2){if($fightingweak>=3){echo  "<font color=red>Fighting</font><br>";}else {echo "Fighting<br>";}}
+                               if($Poison5r == 2){if($poisonweak>=3){echo  "<font color=red>Poison</font><br>";}else {echo "Poison<br>";}}
+                               if($Ground5r == 2){if($groundweak>=3){echo  "<font color=red>Ground</font><br>";}else {echo "Ground<br>";}}
+                               if($Flying5r == 2){if($flyingweak>=3){echo  "<font color=red>Flying</font><br>";}else {echo "Flying<br>";}}
+                               if($Psychic5r == 2){if($psychicweak>=3){echo  "<font color=red>Psychic</font><br>";}else {echo "Psychic<br>";}}
+                               if($Bug5r == 2){if($bugweak>=3){echo  "<font color=red>Bug</font><br>";}else {echo "Bug<br>";}}
+                               if($Rock5r == 2){if($rockweak>=3){echo  "<font color=red>Rock</font><br>";}else {echo "Rock<br>";}}
+                               if($Ghost5r == 2){if($ghostweak>=3){echo  "<font color=red>Ghost</font><br>";}else {echo "Ghost<br>";}}
+                               if($Dragon5r == 2){if($dragonweak>=3){echo  "<font color=red>Dragon</font><br>";}else {echo "Dragon<br>";}}
+                               if($Dark5r == 2){if($darkweak>=3){echo  "<font color=red>Dark</font><br>";}else {echo "Dark<br>";}}
+                               if($Steel5r == 2){if($steelweak>=3){echo  "<font color=red>Steel</font><br>";}else {echo "Steel<br>";}}
+                               if($Fairy5r == 2){if($fairyweak>=3){echo  "<font color=red>Fairy</font><br>";}else {echo "Fairy<br>";}}
+                               if($Typeless5r == 2){if($typelessweak>=3){echo  "<font color=red>Typeless</font><br>";}else {echo "Typeless<br>";}}
+                                ?>
+                          <div><strong>2x Resistances (0.5x dmg):</strong></div>
+                          <?php
+                              if($Normal5r == 0.5){echo "Normal<br>";}
+                              if($Fire5r == 0.5){echo "Fire<br>";}
+                              if($Water5r == 0.5){echo "Water<br>";}
+                              if($Grass5r == 0.5){echo "Grass<br>";}
+                              if($Electric5r == 0.5){echo "Electric<br>";}
+                              if($Ice5r == 0.5){echo "Ice<br>";}
+                              if($Fighting5r == 0.5){echo "Fighting<br>";}
+                              if($Poison5r == 0.5){echo "Poison<br>";}
+                              if($Ground5r == 0.5){echo "Ground<br>";}
+                              if($Flying5r == 0.5){echo "Flying<br>";}
+                              if($Psychic5r == 0.5){echo "Psychic<br>";}
+                              if($Bug5r == 0.5){echo "Bug<br>";}
+                              if($Rock5r == 0.5){echo "Rock<br>";}
+                              if($Ghost5r == 0.5){echo "Ghost<br>";}
+                              if($Dragon5r == 0.5){echo "Dragon<br>";}
+                              if($Dark5r == 0.5){echo "Dark<br>";}
+                              if($Steel5r == 0.5){echo "Steel<br>";}
+                              if($Fairy5r == 0.5){echo "Fairy<br>";}
+                              if($Typeless5r == 0.5){echo "Typeless<br>";}
+                              ?>
+                              <div><strong>4x Resistances (0.25x dmg):</strong></div>
+                          <?php
+                              if($Normal5r == 0.25){echo "Normal<br>";}
+                              if($Fire5r == 0.25){echo "Fire<br>";}
+                              if($Water5r == 0.25){echo "Water<br>";}
+                              if($Grass5r == 0.25){echo "Grass<br>";}
+                              if($Electric5r == 0.25){echo "Electric<br>";}
+                              if($Ice5r == 0.25){echo "Ice<br>";}
+                              if($Fighting5r == 0.25){echo "Fighting<br>";}
+                              if($Poison5r == 0.25){echo "Poison<br>";}
+                              if($Ground5r == 0.25){echo "Ground<br>";}
+                              if($Flying5r == 0.25){echo "Flying<br>";}
+                              if($Psychic5r == 0.25){echo "Psychic<br>";}
+                              if($Bug5r == 0.25){echo "Bug<br>";}
+                              if($Rock5r == 0.25){echo "Rock<br>";}
+                              if($Ghost5r == 0.25){echo "Ghost<br>";}
+                              if($Dragon5r == 0.25){echo "Dragon<br>";}
+                              if($Dark5r == 0.25){echo "Dark<br>";}
+                              if($Steel5r == 0.25){echo "Steel<br>";}
+                              if($Fairy5r == 0.25){echo "Fairy<br>";}
+                              if($Typeless5r == 0.25){echo "Typeless<br>";}
+                              ?>
+                          <div><strong>Immunities (0x dmg):</strong></div>
+                          <?php
+                              if($Normal5r == 0){echo "Normal<br>";}
+                              if($Fire5r == 0){echo "Fire<br>";}
+                              if($Water5r == 0){echo "Water<br>";}
+                              if($Grass5r == 0){echo "Grass<br>";}
+                              if($Electric5r == 0){echo "Electric<br>";}
+                              if($Ice5r == 0){echo "Ice<br>";}
+                              if($Fighting5r == 0){echo "Fighting<br>";}
+                              if($Poison5r == 0){echo "Poison<br>";}
+                              if($Ground5r == 0){echo "Ground<br>";}
+                              if($Flying5r == 0){echo "Flying<br>";}
+                              if($Psychic5r == 0){echo "Psychic<br>";}
+                              if($Bug5r == 0){echo "Bug<br>";}
+                              if($Rock5r == 0){echo "Rock<br>";}
+                              if($Ghost5r == 0){echo "Ghost<br>";}
+                              if($Dragon5r == 0){echo "Dragon<br>";}
+                              if($Dark5r == 0){echo "Dark<br>";}
+                              if($Steel5r == 0){echo "Steel<br>";}
+                              if($Fairy5r == 0){echo "Fairy<br>";}
+                              if($Typeless5r == 0){echo "Typeless<br>";}
+                              ?>
+
+                      </div>
+                      
+                  </div>
+
+                  <div class="card mb-4 rounded-3 shadow-sm" >
+                        
+                        <div class="card-header py-3" >
+                        <?php echo "$poke6"; ?> <br>
+                        Type 1: <?php echo "$type11 "; ?> <br>
+                        Type 2: <?php echo "$type12 "; ?>
+                        <div><strong>4x Weaknesses (4x dmg):</strong></div>
+                            <?php
+                            //idea for updating a value to create a weakness tracker: When a type has a weakness, update a relevant value, such as if a pokemon is weak to water (2x or 4x), update waterWeak by 1. Then, at the end, check all typeWeak numbers and echo team weaknesses if their value is 3 or greater.
+                            if($Normal6r == 4){if($normalweak>=3){echo  "<font color=red>Normal</font><br>";}else {echo "Normal<br>";}}
+                            if($Fire6r == 4){if($fireweak>=3){echo  "<font color=red>Fire</font><br>";}else {echo "Fire<br>";}}
+                            if($Water6r == 4){if($waterweak>=3){echo  "<font color=red>Water</font><br>";}else {echo "Water<br>";}}
+                            if($Grass6r == 4){if($grassweak>=3){echo  "<font color=red>Grass</font><br>";}else {echo "Grass<br>";}}
+                            if($Electric6r == 4){if($electricweak>=3){echo  "<font color=red>Electric</font><br>";}else {echo "Electric<br>";}}
+                            if($Ice6r == 4){if($iceweak>=3){echo  "<font color=red>Ice</font><br>";}else {echo "Ice<br>";}}
+                            if($Fighting6r == 4){if($fightingweak>=3){echo  "<font color=red>Fighting</font><br>";}else {echo "Fighting<br>";}}
+                            if($Poison6r == 4){if($poisonweak>=3){echo  "<font color=red>Poison</font><br>";}else {echo "Poison<br>";}}
+                            if($Ground6r == 4){if($groundweak>=3){echo  "<font color=red>Ground</font><br>";}else {echo "Ground<br>";}}
+                            if($Flying6r == 4){if($flyingweak>=3){echo  "<font color=red>Flying</font><br>";}else {echo "Flying<br>";}}
+                            if($Psychic6r == 4){if($psychicweak>=3){echo  "<font color=red>Psychic</font><br>";}else {echo "Psychic<br>";}}
+                            if($Bug6r == 4){if($bugweak>=3){echo  "<font color=red>Bug</font><br>";}else {echo "Bug<br>";}}
+                            if($Rock6r == 4){if($rockweak>=3){echo  "<font color=red>Rock</font><br>";}else {echo "Rock<br>";}}
+                            if($Ghost6r == 4){if($ghostweak>=3){echo  "<font color=red>Ghost</font><br>";}else {echo "Ghost<br>";}}
+                            if($Dragon6r == 4){if($dragonweak>=3){echo  "<font color=red>Dragon</font><br>";}else {echo "Dragon<br>";}}
+                            if($Dark6r == 4){if($darkweak>=3){echo  "<font color=red>Dark</font><br>";}else {echo "Dark<br>";}}
+                            if($Steel6r == 4){if($steelweak>=3){echo  "<font color=red>Steel</font><br>";}else {echo "Steel<br>";}}
+                            if($Fairy6r == 4){if($fairyweak>=3){echo  "<font color=red>Fairy</font><br>";}else {echo "Fairy<br>";}}
+                            if($Typeless6r == 4){if($typelessweak>=3){echo  "<font color=red>Typeless</font><br>";}else {echo "Typeless<br>";}}
+                            ?>
+							<div><strong>2x Weaknesses (2x dmg):</strong></div>
+							<?php
+                             if($Normal6r == 2){if($normalweak>=3){echo  "<font color=red>Normal</font><br>";}else {echo "Normal<br>";}}
+                             if($Fire6r == 2){if($fireweak>=3){echo  "<font color=red>Fire</font><br>";}else {echo "Fire<br>";}}
+                               if($Water6r == 2){if($waterweak>=3){echo  "<font color=red>Water</font><br>";}else {echo "Water<br>";}}
+                               if($Grass6r == 2){if($grassweak>=3){echo  "<font color=red>Grass</font><br>";}else {echo "Grass<br>";}}
+                               if($Electric6r == 2){if($electricweak>=3){echo  "<font color=red>Electric</font><br>";}else {echo "Electric<br>";}}
+                               if($Ice6r == 2){if($iceweak>=3){echo  "<font color=red>Ice</font><br>";}else {echo "Ice<br>";}}
+                               if($Fighting6r == 2){if($fightingweak>=3){echo  "<font color=red>Fighting</font><br>";}else {echo "Fighting<br>";}}
+                               if($Poison6r == 2){if($poisonweak>=3){echo  "<font color=red>Poison</font><br>";}else {echo "Poison<br>";}}
+                               if($Ground6r == 2){if($groundweak>=3){echo  "<font color=red>Ground</font><br>";}else {echo "Ground<br>";}}
+                               if($Flying6r == 2){if($flyingweak>=3){echo  "<font color=red>Flying</font><br>";}else {echo "Flying<br>";}}
+                               if($Psychic6r == 2){if($psychicweak>=3){echo  "<font color=red>Psychic</font><br>";}else {echo "Psychic<br>";}}
+                               if($Bug6r == 2){if($bugweak>=3){echo  "<font color=red>Bug</font><br>";}else {echo "Bug<br>";}}
+                               if($Rock6r == 2){if($rockweak>=3){echo  "<font color=red>Rock</font><br>";}else {echo "Rock<br>";}}
+                               if($Ghost6r == 2){if($ghostweak>=3){echo  "<font color=red>Ghost</font><br>";}else {echo "Ghost<br>";}}
+                               if($Dragon6r == 2){if($dragonweak>=3){echo  "<font color=red>Dragon</font><br>";}else {echo "Dragon<br>";}}
+                               if($Dark6r == 2){if($darkweak>=3){echo  "<font color=red>Dark</font><br>";}else {echo "Dark<br>";}}
+                               if($Steel6r == 2){if($steelweak>=3){echo  "<font color=red>Steel</font><br>";}else {echo "Steel<br>";}}
+                               if($Fairy6r == 2){if($fairyweak>=3){echo  "<font color=red>Fairy</font><br>";}else {echo "Fairy<br>";}}
+                               if($Typeless6r == 2){if($typelessweak>=3){echo  "<font color=red>Typeless</font><br>";}else {echo "Typeless<br>";}}
+                                ?>
+                          <div><strong>2x Resistances (0.5x dmg):</strong></div>
+                          <?php
+                              if($Normal6r == 0.5){echo "Normal<br>";}
+                              if($Fire6r == 0.5){echo "Fire<br>";}
+                              if($Water6r == 0.5){echo "Water<br>";}
+                              if($Grass6r == 0.5){echo "Grass<br>";}
+                              if($Electric6r == 0.5){echo "Electric<br>";}
+                              if($Ice6r == 0.5){echo "Ice<br>";}
+                              if($Fighting6r == 0.5){echo "Fighting<br>";}
+                              if($Poison6r == 0.5){echo "Poison<br>";}
+                              if($Ground6r == 0.5){echo "Ground<br>";}
+                              if($Flying6r == 0.5){echo "Flying<br>";}
+                              if($Psychic6r == 0.5){echo "Psychic<br>";}
+                              if($Bug6r == 0.5){echo "Bug<br>";}
+                              if($Rock6r == 0.5){echo "Rock<br>";}
+                              if($Ghost6r == 0.5){echo "Ghost<br>";}
+                              if($Dragon6r == 0.5){echo "Dragon<br>";}
+                              if($Dark6r == 0.5){echo "Dark<br>";}
+                              if($Steel6r == 0.5){echo "Steel<br>";}
+                              if($Fairy6r == 0.5){echo "Fairy<br>";}
+                              if($Typeless6r == 0.5){echo "Typeless<br>";}
+                              ?>
+                              <div><strong>4x Resistances (0.25x dmg):</strong></div>
+                          <?php
+                              if($Normal6r == 0.25){echo "Normal<br>";}
+                              if($Fire6r == 0.25){echo "Fire<br>";}
+                              if($Water6r == 0.25){echo "Water<br>";}
+                              if($Grass6r == 0.25){echo "Grass<br>";}
+                              if($Electric6r == 0.25){echo "Electric<br>";}
+                              if($Ice6r == 0.25){echo "Ice<br>";}
+                              if($Fighting6r == 0.25){echo "Fighting<br>";}
+                              if($Poison6r == 0.25){echo "Poison<br>";}
+                              if($Ground6r == 0.25){echo "Ground<br>";}
+                              if($Flying6r == 0.25){echo "Flying<br>";}
+                              if($Psychic6r == 0.25){echo "Psychic<br>";}
+                              if($Bug6r == 0.25){echo "Bug<br>";}
+                              if($Rock6r == 0.25){echo "Rock<br>";}
+                              if($Ghost6r == 0.25){echo "Ghost<br>";}
+                              if($Dragon6r == 0.25){echo "Dragon<br>";}
+                              if($Dark6r == 0.25){echo "Dark<br>";}
+                              if($Steel6r == 0.25){echo "Steel<br>";}
+                              if($Fairy6r == 0.25){echo "Fairy<br>";}
+                              if($Typeless6r == 0.25){echo "Typeless<br>";}
+                              ?>
+                          <div><strong>Immunities (0x dmg):</strong></div>
+                          <?php
+                              if($Normal6r == 0){echo "Normal<br>";}
+                              if($Fire6r == 0){echo "Fire<br>";}
+                              if($Water6r == 0){echo "Water<br>";}
+                              if($Grass6r == 0){echo "Grass<br>";}
+                              if($Electric6r == 0){echo "Electric<br>";}
+                              if($Ice6r == 0){echo "Ice<br>";}
+                              if($Fighting6r == 0){echo "Fighting<br>";}
+                              if($Poison6r == 0){echo "Poison<br>";}
+                              if($Ground6r == 0){echo "Ground<br>";}
+                              if($Flying6r == 0){echo "Flying<br>";}
+                              if($Psychic6r == 0){echo "Psychic<br>";}
+                              if($Bug6r == 0){echo "Bug<br>";}
+                              if($Rock6r == 0){echo "Rock<br>";}
+                              if($Ghost6r == 0){echo "Ghost<br>";}
+                              if($Dragon6r == 0){echo "Dragon<br>";}
+                              if($Dark6r == 0){echo "Dark<br>";}
+                              if($Steel6r == 0){echo "Steel<br>";}
+                              if($Fairy6r == 0){echo "Fairy<br>";}
+                              if($Typeless6r == 0){echo "Typeless<br>";}
+                              ?>
+
+                      </div>
+                      
+                  </div>
+
+
+				</div>
+</div>
+
+
+
+
+                <div class="row row-cols-1 row-cols-md-1 mb-1 text-center">
+
+					<div class="col">
+        				<div class="card mb-4 rounded-3 shadow-sm">
+
+          					<div class="card-header py-3">
+            					<h4 class="my-0 fw-normal">What do these terms mean, exactly?</h4>
+          					</div>
+          					<div class="card-body">
+							  	<p>These terms are commonly-used terms to describe the interactions a type has with your type(s).</p>
+                                <p>Neutral. You take 1x from a type that isn't mentioned on the chart given. If a type does not show up at all, assume that you are Neutral to it. It is noteworthy that if you have 2 types, and one is resisting the attacking type and the other is weak to it, it will become Neutral.</p>
+								<p>4x Resistance means both of the types you have are resistant to the attacking type, and take 0.25x damage from that type of move. The reason it's called 4x resistance is due to mirroring it with 4x Weakness, which is intuitive.</p>
+                                <p>2x Resistance means one type you have resists the attacking type, and takes 0.5x damage from that type of move. The reasoning is similar to 4x Resistance: it mirrors 2x Weakness</p>
+                                <p>2x Weakness means one type you have is weak to the attacking type, and takes 2x damage from that type. The naming convention matches the multiplier the move gets.</p>
+                                <p>4x Weakness means both types you have are weak to the attacking type, and take 4x damage from that type. The naming convention matches the multiplier the move gets.</p>
+                                <p>Immunity means at least one type you have is completely immune to the attacking type, and take 0x damage. Note that this type of immunity is different from bring immune to a type of effect. Also note that even if one of your types is weak or resistant to the attacking type, if the other type you have is immune, the damage multiplier will still be 0.</p>
+                                <p>If you want to learn more about other things to consider, take a look at the articles that can be found here at Weakness Policy!</p>
+								<a href="weaknesspolicyarticles.php">
+									<button class="btn btn-primary w-100 py-2" type="submit">Articles are here!</button>
+								</a>
+							</div>
+        				</div>
+      				</div>
+				</div>
+
+
+
+</html>
