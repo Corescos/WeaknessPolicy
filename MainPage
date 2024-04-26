@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<title>Weakness Policy</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">   
+
+		<link rel="apple-touch-icon" sizes="180x180" href="images/weaknessPolicyLogo.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="images/weaknessPolicyLogo.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="images/weaknessPolicyLogo.png">
+		<link rel="manifest" href="images/site.webmanifest">		
+  	</head>
+  	<body>
+
+		<div class="container py-3">
+  			<header>
+   				<div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+				   <a href="weaknesspolicy.php" class="d-flex align-items-center link-body-emphasis text-decoration-none">
+       					<span class="fs-4">Weakness Policy</span>
+					</a>
+
+      				<nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+					  	<a class="me-3 py-2 link-body-emphasis text-decoration-none" href="weaknesspolicy.php">Home</a>
+	  					<a class="me-3 py-2 link-body-emphasis text-decoration-none" href="weaknesspolicylog.php">Analysis Tool</a>
+						<a class="me-3 py-2 link-body-emphasis text-decoration-none" href="weaknesspolicyarticles.php">Useful Articles</a>
+
+      				</nav>
+    			</div>
+
+    			<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      				<img src="images/weaknessPolicyLogo.png" width="349" height="267" title="Weakness Policy Logo" alt="Weakness Policy Logo" />
+    			</div>
+ 		 	</header>
+
+			<main>
+
+				<div class="row row-cols-1 row-cols-md-1 mb-1 text-center">
+
+					<div class="col">
+        				<div class="card mb-4 rounded-3 shadow-sm">
+
+          					<div class="card-header py-3">
+            					<h4 class="my-0 fw-normal">What is Weakness Policy?</h4>
+          					</div>
+          					<div class="card-body">
+							  	<p>Weakness Policy is the Capstone project for Matthew Marshall, a Creative Technologies student at Berry College. This project is a tool created for Competitive Pokemon players, after experiencing what can only be described as a clerical error when teambuilding for an online tournament. I made this tool as one that not only I myself would want to use, but as one that players of any skill level can pick up and use within short timeframe. </p>
+							
+							
+							</div>
+        				</div>
+      				</div>
+				</div>
+
+				<div class="row row-cols-1 row-cols-md-1 mb-1 text-center">
+
+					<div class="col">
+        				<div class="card mb-4 rounded-3 shadow-sm">
+
+          					<div class="card-header py-3">
+            					<h4 class="my-0 fw-normal">Analysis Tool</h4>
+          					</div>
+          					<div class="card-body">
+							  	<p>This button will take you to the Defensive Analysis Tool, a tool that takes all of the types from each Pokemon on your team and shows clearly what their interactions with other types. For players familiar with the existing Type Chart available online, this is a more streamlined approach to giving clear info for all skill levels.</p>
+								<a href="weaknesspolicylog.php">
+									<button class="btn btn-primary w-100 py-2" type="submit">Analyze your team here!</button>
+								</a>
+							
+
+							</div>
+        				</div>
+      				</div>
+				</div>
+
+
+
+				<div class="row row-cols-1 row-cols-md-1 mb-1 text-center">
+
+					<div class="col">
+						<div class="card mb-4 rounded-3 shadow-sm">
+
+							<div class="card-header py-3">
+								<h4 class="my-0 fw-normal">Articles</h4>
+							</div>
+							<div class="card-body">
+								<p>I've also written some articles about things to know. This section is still a work in process while I perfect the Analysis Tool, but in the future it will have article pages on things to know for players who aren't as familiar with the game, or anyone who wants a refresher on things to know.</p>
+							
+								<a href="weaknesspolicyarticles.php">
+									<button class="btn btn-primary w-100 py-2" type="submit">Articles are here!</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					</div>
+
+
+
+
+
+			</main>
+
+
+			<!-- <footer class="pt-4 my-md-5 pt-md-5 border-top">
+    			<div class="row">
+      				<div class="col-12 col-md">
+						<small class="d-block mb-3 text-body-secondary">Created by Matthew Marshall</small>
+      				</div>
+				</div>
+			</footer> -->
+ 
+		</div>
+		<script src="js/bootstrap.bundle.min.js"></script>
+	</body>
+</html>
